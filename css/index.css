@@ -1,0 +1,38 @@
+.colorFuente{
+    color: #F8FCEB;
+}
+
+.navbar{
+    background-color: #495664;
+}
+
+.fixedMid {
+    position: fixed;
+    top: 40vh;
+    right: 100vw;
+    left: 0;
+    bottom: 0;
+    z-index: 1030;
+    height: 8vh;
+    width: 8vh;
+}
+
+.dropdown-menu-dark{
+    --bs-dropdown-link-active-bg: #495664;
+}
+
+.offcanvas-body{
+    margin-top: -0.6rem;
+}
+
+.banner{
+    height: 30vh;
+    border-bottom: 2px solid #495664;
+    padding: 1.5rem;
+}
+
+.botoncarousel{
+    height: 8vh;
+    width: 8vh;
+}
+
