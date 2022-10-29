@@ -11,18 +11,27 @@
 }
 
 .colorFuente{
-    color: #F8FCEB;
+    color: white;
     font-family: 'Noto Sans', sans-serif;
 }
 
 .colorFuente2{
-    color: #F8FCEB;
+    color: white;
     font-family: 'Noto Sans', sans-serif;
 }
 
 .colorFuente2:hover{
     color: #F6F7D3;
     font-size: 1.2rem;
+}
+
+.colorFuenteNav{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuenteNav:hover{
+    color: #F6F7D3;
 }
 
 .navbar{
@@ -92,8 +101,6 @@
     .carouselGrande{
         display: none;
     }
-    
-
 }
 
 .card{
@@ -110,13 +117,30 @@
 
 .botonRight{
     margin-left: -0.8rem;
-  }
+}
 
 .cajaCaracteristicas{
     border-top: 1px solid #495664;
 }
 
 .footer{
-    background-color: #495664;
+    background-color: #333C4A;
 }
 
+@media (max-width:991px) {
+    .flexNavBar{
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        border-top: 1px solid #495664;
+    }
+}
+
+@media (min-width:992px) {
+    .flexNavBar{
+        width: 50%;
+    }
+}
