@@ -1,9 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+
+.offcanvas{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.fuente{
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .colorFuente{
     color: #F8FCEB;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .navbar{
-    background-color: #495664;
+    background-color: #333C4A;
 }
 
 .fixedMid {
@@ -18,7 +31,7 @@
 }
 
 .dropdown-menu-dark{
-    --bs-dropdown-link-active-bg: #495664;
+    --bs-dropdown-link-active-bg: #333C4A;
 }
 
 .offcanvas-body{
@@ -28,3 +41,30 @@
 .banner{
     height: 40vh;
 }
+
+.botonCarousel{
+    height: 1%;
+    width: 1%;
+}
+
+.cajaCarousel{
+    height: 100%;
+    width: 90%;
+}
+
+.widthCarousel{
+    width: 90%;
+}
+
+.card{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.imgCard{
+    height: 100%;
+    width: 100%;
+}
+
+.botonRight{
+    margin-left: -1.3rem;
+  }
