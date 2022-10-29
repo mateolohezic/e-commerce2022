@@ -15,6 +15,16 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+.colorFuente2{
+    color: #F8FCEB;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuente2:hover{
+    color: #F6F7D3;
+    font-size: 1.2rem;
+}
+
 .navbar{
     background-color: #333C4A;
 }
@@ -26,8 +36,13 @@
     left: 0;
     bottom: 0;
     z-index: 1030;
-    height: 8vh;
-    width: 8vh;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0;
+}
+
+.fixedMid:hover{
+    padding-left: 1rem;
 }
 
 .dropdown-menu-dark{
@@ -43,8 +58,8 @@
 }
 
 .botonCarousel{
-    height: 1%;
-    width: 1%;
+    height: 2rem;
+    width: 2rem;
 }
 
 .cajaCarousel{
@@ -52,12 +67,40 @@
     width: 90%;
 }
 
-.widthCarousel{
-    width: 90%;
+@media (min-width: 738px) {
+    .card{
+        width: 20%;
+    }
+
+    .widthCarousel{
+        width: 90%;
+    }
+
+    .carouselChico{
+        display: none;
+    }
+}
+
+@media (max-width: 737px) {
+    .card{
+        width: 100%;
+    }
+    .widthCarousel{
+        width: 70%;
+    }
+
+    .carouselGrande{
+        display: none;
+    }
+    
+
 }
 
 .card{
     font-family: 'Roboto Condensed', sans-serif;
+    min-height: 100%;
+    max-width: 100%;
+    border: 0;
 }
 
 .imgCard{
@@ -66,5 +109,14 @@
 }
 
 .botonRight{
-    margin-left: -1.3rem;
+    margin-left: -0.8rem;
   }
+
+.cajaCaracteristicas{
+    border-top: 1px solid #495664;
+}
+
+.footer{
+    background-color: #495664;
+}
+
