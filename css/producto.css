@@ -5,6 +5,10 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+.fuente2{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 .colorFuente{
     color: white;
     font-family: 'Noto Sans', sans-serif;
@@ -22,7 +26,7 @@
 
 .colorFuenteNav{
     color: white;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .colorFuenteNav:hover{
@@ -64,4 +68,23 @@
 .inicio:hover{
     color: #495664;
     font-size: 1.8rem;
+}
+
+.carousel-control-prev-icon{
+    background-image: url(https://www.iconpacks.net/icons/2/free-icon-arrow-left-3099.png);
+}
+.carousel-control-next-icon{
+    background-image: url(https://www.iconpacks.net/icons/2/free-icon-arrow-right-3098.png);
+}
+@media (min-width: 992px){
+    .imgCarouselProductos{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+@media (max-width: 991px){
+    .imgCarouselProductos{
+        width: 60vw;
+        height: 60vw;
+    }
 }
