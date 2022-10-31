@@ -88,6 +88,11 @@
     .carouselChico{
         display: none;
     }
+
+    .imgCard{
+        height: 15vw;
+    }
+    
 }
 
 @media (max-width: 737px) {
@@ -101,6 +106,10 @@
     .carouselGrande{
         display: none;
     }
+
+    .imgCard{
+        height: 50vw;
+    }
 }
 
 .card{
@@ -110,17 +119,12 @@
     border: 0;
 }
 
-.imgCard{
-    height: 100%;
-    width: 100%;
-}
-
 .botonRight{
     margin-left: -0.8rem;
 }
 
 .cajaCaracteristicas{
-    border-top: 1px solid #495664;
+    border-top: 1px solid #d4d4d4;
 }
 
 .footer{
