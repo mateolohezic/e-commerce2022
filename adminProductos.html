@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/adminProductos.css">
+    <title>Administración Productos</title>
+</head>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg m-0">
+            <div class="container-fluid">
+                <a class="navbar-brand colorFuenteNav" href="./index.html">GamerStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ms-auto flexNavBar">
+                    <input class="form-control me-2 w-100" type="search" placeholder="Buscar un producto" aria-label="Search">
+                    <button class="btn btn-outline-dark text-nowrap ms-2 border-0 colorFuente" type="button"><i class="bi bi-cart4"></i></button>
+                    <button class="btn btn-outline-dark text-nowrap ms-2 border-0 colorFuente" type="button">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <div class="my-5 text-center mx-auto fs-1 border-bottom border-1 pb-4 w-75 fuente">Administración de Productos</div>
+            <div class="container-fluid row text-center justify-content-center mt-5 mb-5 m-0 p-0">
+                <div class="col-12">
+                  <div class="d-flex justify-content-between">
+                    <div class="text-start ms-1 mb-3">
+                      <label for="search" class="mb-2 ms-auto me-2"><h1 class="modal-title fs-5"><i class="bi bi-search"></i></h1></label>
+                      <input type="search" class="p-2 buscadorBarraAdmin ms-auto w-75" id="search" value="" oninput="barraCoinciden()" placeholder= "Buscar...">
+                    </div>
+                    <div class="text-end mb-3 me-1">
+                      <button type="button" class="btn btn-secondary fuente p-2 pe-3" data-bs-toggle="modal" data-bs-target="#añadirProducto"><i class="bi bi-plus"></i> Añadir</button>
+                    </div>
+                  </div>
+                  <section>
+                    <div class="modal fade text-start" id="añadirProducto" tabindex="-1" aria-labelledby="añadirProductoLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header modalBgColor">
+                            <h1 class="modal-title fs-5 colorFuente" id="añadirProductoLabel">Añadir un producto</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body modalBgColor colorFuente">
+                            <form>
+                              <div class="row">
+                                <div class="mb-3 col-12">
+                                  <label for="nombre" class="form-label">Nombre del Producto</label>
+                                  <input type="text" class="form-control" id="nombre" value="" required>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="mb-3 col">
+                                    <label for="categoria" class="form-label">Categoría</label>
+                                    <input type="text" class="form-control" id="categoria" value="" required>
+                                </div>
+                                <div class="mb-3 col">
+                                  <label for="date" class="form-label">Fecha de Fabricación</label>
+                                  <input type="date" class="form-control" id="date" value="" required>
+                                </div>
+                              </div>                                       
+                              <div class="row">
+                                <div class="mb-3 col">
+                                  <label for="price" class="form-label">Precio</label>
+                                  <input type="number" class="form-control" id="price" value="" aria-describedby="priceHelp" required>
+                                </div>
+                                <div class="mb-3 col">
+                                  <label for="cod" class="form-label">Codigo de Producto</label>
+                                  <input type="text" class="form-control" id="cod" value="" required>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="mb-3 col">
+                                  <label for="image1" class="form-label">Portada</label>
+                                  <input type="text" class="form-control" id="image1" value="" required>
+                                </div>
+                                <div class="mb-3 col">
+                                  <label for="image2" class="form-label">Imagen 2</label>
+                                  <input type="text" class="form-control" id="image2" value="" required>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="mb-3 col-6">
+                                  <label for="image3" class="form-label">Imagen 3</label>
+                                  <input type="text" class="form-control" id="image3" value="" required>
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="stock" class="form-label">Unidades en existencia</label>
+                                    <input type="number" class="form-control" id="stock" value="" required>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-danger" onclick="añadirProducto()" >Añadir</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div class="table-responsive">
+                    <table class="table table-bordered fuente">
+                      <thead>
+                        <tr>
+                          <th>Código</th>
+                          <th>Nombre</th>
+                          <th>Categoría</th>
+                          <th>Precio</th>
+                          <th>Unidades</th>
+                          <th>Disponible</th>
+                          <th>Opciones</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tabla">
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <footer>
+            <div class="container-fluid p-4 fuente footer w-100">
+                <div class="row">
+                    <div class="text-lg-start text-center col-lg-4 m-lg-0 m-1">
+                        <a href="#" class="text-decoration-none colorFuente2">Preguntas Frecuentas</a>
+                    </div>
+                    <div class="text-center col-lg-4 col-12 m-lg-0 m-1 colorFuente">&copy 2022 <b>Mateo Lohezic</b> - Todos los derechos reservados.</div>
+                    <div class="text-lg-end text-center col-lg-4 fs-5 m-lg-0 m-1 ">
+                    <a href="https://www.facebook.com/" class="text-decoration-none colorFuente2"><i class="bi bi-facebook m-1 RS"></i></a>
+                    <a href="https://www.instagram.com/" class="text-decoration-none colorFuente2"><i class="bi bi-instagram m-1 RS"></i></a>
+                    <a href="https://web.whatsapp.com/" class="text-decoration-none colorFuente2"><i class="bi bi-whatsapp m-1 RS"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
