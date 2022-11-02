@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/producto.css">
+    <title>Notebook</title>
+</head>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg m-0">
+            <div class="container-fluid">
+                <a class="navbar-brand colorFuenteNav" href="../index.html">GamerStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ms-auto flexNavBar">
+                    <input class="form-control me-2 w-100" type="search" placeholder="Buscar un producto" aria-label="Search">
+                    <button class="btn btn-outline-dark text-nowrap ms-2 border-0 colorFuente" type="button"><i class="bi bi-cart4"></i></button>
+                    <button class="btn btn-outline-dark text-nowrap ms-2 border-0 colorFuente" type="button">Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <button class="btn fixedMid border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <i class="bi bi-chevron-double-right fs-2"></i>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title mt-5 ms-3 border-bottom border-1 w-75 pb-3">Categorías</h5>
+                    <button type="button" class="btn-close mt-4 me-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    PCs y Notebooks <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">PC de Escritorio</a></li>
+                                    <li><a class="dropdown-item" href="#">Notebook</a></li>
+                                    <li><a class="dropdown-item" href="#">All in One</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown"> 
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Consolas <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Playstation</a></li>
+                                    <li><a class="dropdown-item" href="#">Xbox</a></li>
+                                    <li><a class="dropdown-item" href="#">Otras</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Procesadores y Coolers CPUs <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Intel</a></li>
+                                    <li><a class="dropdown-item" href="#">AMD</a></li>
+                                    <li><a class="dropdown-item" href="#">Coolers</a></li>
+                                    <li><a class="dropdown-item" href="#">Refrigeración Liquida</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Mothers <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">AMD</a></li>
+                                    <li><a class="dropdown-item" href="#">Intel</a></li>
+                                    <li><a class="dropdown-item" href="#">Combo de actualización</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Memorias RAM <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">DDR2</a></li>
+                                    <li><a class="dropdown-item" href="#">DDR3</a></li>
+                                    <li><a class="dropdown-item" href="#">DDR4</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Almacenamiento <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Disco Duro</a></li>
+                                    <li><a class="dropdown-item" href="#">Disco Solido</a></li>
+                                    <li><a class="dropdown-item" href="#">Disco Externo</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Tarjetas Graficas <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">NVIDIA</a></li>
+                                    <li><a class="dropdown-item" href="#">AMD</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Gabinetes y Fuentes <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Gabinetes con fuente</a></li>
+                                    <li><a class="dropdown-item" href="#">Gabinetes sin fuente</a></li>
+                                    <li><a class="dropdown-item" href="#">Fuente</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pantallas <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Monitores</a></li>
+                                    <li><a class="dropdown-item" href="#">Televisores</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Teclados y Mouses <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Teclados</a></li>
+                                    <li><a class="dropdown-item" href="#">Mouses</a></li>
+                                    <li><a class="dropdown-item" href="#">Combo Teclado + Mouse</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Audio <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Auriculares</a></li>
+                                    <li><a class="dropdown-item" href="#">Parlantes</a></li>
+                                    <li><a class="dropdown-item" href="#">Microfono</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Perifericos <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Joystick</a></li>
+                                    <li><a class="dropdown-item" href="#">Web-cam</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Cables y cargadores <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Adaptadores</a></li>
+                                    <li><a class="dropdown-item" href="#">Cables</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5 mb-4">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Oficina <span class="text-muted"> (19)</span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Estabilizadores</a></li>
+                                    <li><a class="dropdown-item" href="#">Extensores de Wi-Fi</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                    </div>
+                    <h5 class="offcanvas-title mb-2 ms-3 border-top pt-3 border-1">Ofertas</h5>
+                    <h5 class="offcanvas-title mb-2 ms-3 border-left border-1">Mas vendidos!</h5>
+                    <h5 class="offcanvas-title mb-2 ms-3 border-left border-1">Soporte</h5>
+                    <h5 class="offcanvas-title mb-2 ms-3 border-left border-1">Nosotros</h5>
+                    <h5 class="offcanvas-title ms-3 border-left border-1 mb-3">Sponsors</h5>
+                </div>
+            </div>
+        </section>
+        <div class="text-start volverinicio mt-3 ms-4 fs-3">
+            <a href="../index.html" class="text-decoration-none inicio fuente"><i class="bi bi-arrow-left-short"></i>Inicio</a>
+        </div>
+        <section>
+            <div class="row justify-content-center w-100">
+                <div id="carouselProducto" class="carousel slide col-xxl-5 col-xl-5 col-lg-5 col-sm-10 col-md-10 col-10" data-bs-ride="true">
+                    <div class="carousel-inner p-5 pt-0">
+                      <div class="carousel-item active">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_797907-MLA51838551434_102022-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 1">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_647891-MLA51838557351_102022-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 2">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_757954-MLA51838557358_102022-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 3">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="d-flex flex-column text-start col-xxl-4 col-xl-4 col-lg-4 col-sm-10 col-md-10 col-10 fuente">
+                    <div class="fs-1">i7-12700</div>
+                    <div class="text-muted fs-6 marca">Intel</div>
+                    <div class="fs-3 mt-2">$92.399</div><div class="text-success fs12"><i class="bi bi-credit-card-fill"></i> 12 cuotas sin interés</div>
+                    <div class="column text-success border-top border-bottom border-1 my-3 py-3 border-muted">
+                        <div><i class="bi bi-check-lg"></i>    Stock disponible</div>
+                        <div><i class="bi bi-truck"></i>    Envíos a todo el país</div>
+                        <div><i class="bi bi-shield-fill-check"></i>    Compra protegida</div>
+                    </div>
+                    <div>Frecuencia máxima: 3.6 GHz</div>
+                    <div>Núcleos: 12</div>
+                    <div>RAM soportadas: DDR4</div>
+                    <div>Socket: FCLGA1700</div>
+                    <div class="d-flex flex-row-reverse w-100 mb-5 mt-5">
+                        <button type="button" class="btn btn-secondary">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="column mt-5">
+            <div class="col-10 mx-auto border-top border-1 pt-5 fuente mb-5">
+                <div class="fs-1 mb-3"><b>Ficha técnica</b></div>
+                <div class="d-flex flex-column">
+                    <div class="fs-5 mb-2"><b>Características principales</b></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Colección de productos: Procesadores Intel® Core™ i7 de 12ᵃ Generación</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Segmento vertical: Desktop</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Número de procesador: i7-12700</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Estado: Publicado</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Fecha de lanzamiento: 05 de enero de 2022</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Litografía: Intel 7</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Condiciones de uso: PC/Client/Tablet, Workstation</div>
+                </div>
+                <div class="mt-4"><a href="https://www.intel.la/content/www/xl/es/products/sku/134591/intel-core-i712700-processor-25m-cache-up-to-4-90-ghz/specifications.html?countrylabel=Argentina" class="text-decoration-none text-primary" target="_blank">Más información</a></div>
+            </div>
+        </section>
+        <footer>
+            <div class="container-fluid p-4 fuente footer w-100">
+                <div class="row">
+                    <div class="text-lg-start text-center col-lg-4 m-lg-0 m-1">
+                        <a href="#" class="text-decoration-none colorFuente2">Preguntas Frecuentas</a>
+                    </div>
+                    <div class="text-center col-lg-4 col-12 m-lg-0 m-1 colorFuente">&copy 2022 <b>Mateo Lohezic</b> - Todos los derechos reservados.</div>
+                    <div class="text-lg-end text-center col-lg-4 fs-5 m-lg-0 m-1 ">
+                    <a href="https://www.facebook.com/" class="text-decoration-none colorFuente2"><i class="bi bi-facebook m-1 RS"></i></a>
+                    <a href="https://www.instagram.com/" class="text-decoration-none colorFuente2"><i class="bi bi-instagram m-1 RS"></i></a>
+                    <a href="https://web.whatsapp.com/" class="text-decoration-none colorFuente2"><i class="bi bi-whatsapp m-1 RS"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

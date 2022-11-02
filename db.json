@@ -2,12 +2,14 @@
     "productos": [
       {
         "name": "i7-12700",
-        "price": "$92.399",
+        "price": "92.399",
         "categorie": "procesador",
-        "rating": "5",
         "image": "https://http2.mlstatic.com/D_NQ_NP_797907-MLA51838551434_102022-O.webp",
         "image2": "https://static.techspot.com/articles-info/2391/images/intel-corei7-3.jpg",
         "image3": "https://www.bestcell.com.ec/imgadmin/storage/imagenes_articulos/793/3363.png.webp",
+        "oferta": false,
+        "destacado": false,
+        "stock": "0",
         "id": 1
       }
     ]
