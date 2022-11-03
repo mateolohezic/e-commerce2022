@@ -6,8 +6,21 @@ body{
     background-color: #F8FCEB;
 }
 
-.modalBgColor{
+.bgColor{
     background-color: #333C4A;
+}
+
+.btn:hover{
+    background-color: #495664;
+    color: white;
+}
+
+.bgColor2{
+    background-color: #F6F7D3;
+}
+
+.w-40{
+    width: 45%;
 }
 
 .fuente{

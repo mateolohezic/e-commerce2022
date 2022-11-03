@@ -36,75 +36,9 @@
                       <input type="search" class="p-2 buscadorBarraAdmin ms-auto w-75" id="search" value="" oninput="barraCoinciden()" placeholder= "Buscar...">
                     </div>
                     <div class="text-end mb-3 me-1">
-                      <button type="button" class="btn btn-secondary fuente p-2 pe-3" data-bs-toggle="modal" data-bs-target="#añadirProducto"><i class="bi bi-plus"></i> Añadir</button>
+                      <button type="button" class="btn colorFuente bgColor fuente p-2 pe-3" data-bs-toggle="modal" data-bs-target="#agregarProductoModal"><i class="bi bi-plus"></i> Añadir</button>
                     </div>
                   </div>
-                  <section>
-                    <div class="modal fade text-start" id="añadirProducto" tabindex="-1" aria-labelledby="añadirProductoLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                          <div class="modal-header modalBgColor">
-                            <h1 class="modal-title fs-5 colorFuente" id="añadirProductoLabel">Añadir un producto</h1>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body modalBgColor colorFuente">
-                            <form>
-                              <div class="row">
-                                <div class="mb-3 col-12">
-                                  <label for="nombre" class="form-label">Nombre del Producto</label>
-                                  <input type="text" class="form-control" id="nombre" value="" required>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="mb-3 col">
-                                    <label for="categoria" class="form-label">Categoría</label>
-                                    <input type="text" class="form-control" id="categoria" value="" required>
-                                </div>
-                                <div class="mb-3 col">
-                                  <label for="date" class="form-label">Fecha de Fabricación</label>
-                                  <input type="date" class="form-control" id="date" value="" required>
-                                </div>
-                              </div>                                       
-                              <div class="row">
-                                <div class="mb-3 col">
-                                  <label for="price" class="form-label">Precio</label>
-                                  <input type="number" class="form-control" id="price" value="" aria-describedby="priceHelp" required>
-                                </div>
-                                <div class="mb-3 col">
-                                  <label for="cod" class="form-label">Codigo de Producto</label>
-                                  <input type="text" class="form-control" id="cod" value="" required>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="mb-3 col">
-                                  <label for="image1" class="form-label">Portada</label>
-                                  <input type="text" class="form-control" id="image1" value="" required>
-                                </div>
-                                <div class="mb-3 col">
-                                  <label for="image2" class="form-label">Imagen 2</label>
-                                  <input type="text" class="form-control" id="image2" value="" required>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="mb-3 col-6">
-                                  <label for="image3" class="form-label">Imagen 3</label>
-                                  <input type="text" class="form-control" id="image3" value="" required>
-                                </div>
-                                <div class="mb-3 col-6">
-                                    <label for="stock" class="form-label">Unidades en existencia</label>
-                                    <input type="number" class="form-control" id="stock" value="" required>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-danger" onclick="añadirProducto()" >Añadir</button>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
                   <div class="table-responsive">
                     <table class="table table-bordered fuente">
                       <thead>
@@ -124,6 +58,139 @@
                   </div>
                 </div>
               </div>
+        </section>
+        <section>
+          <div class="modal fade" id="agregarProductoModal" tabindex="-1" aria-labelledby="agregarProductoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-6 colorFuente" id="agregarProductoModalLabel">Elija la categoría</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor2 w-100">
+                    <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-4 mt-3">
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirProcesador">Procesador</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente">GPU</button>
+                    </div>
+                    <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-4">
+                      <button type="button" class="btn w-40 bgColor colorFuente">PC</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente">Notebook</button>
+                    </div>
+                    <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-4">
+                      <button type="button" class="btn w-40 bgColor colorFuente">Motherboard</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente">Almacenamiento</button>
+                    </div>
+                    <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-3">
+                      <button type="button" class="btn w-40 bgColor colorFuente">Pantalla</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente">Otro</button>
+                    </div>              
+                </div>
+                <div class="modal-footer bgColor">
+                  <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirProcesador" tabindex="-1" aria-labelledby="añadirProcesadorLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirProcesadorLabel">Procesador</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombre" class="form-label">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="nombre" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marca" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marca" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="socket" class="form-label">Socket</label>
+                        <input type="text" class="form-control" id="socket" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="modelo" class="form-label">Familia</label>
+                        <input type="text" class="form-control" id="modelo" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="frecuenciaMax" class="form-label">Frecuencia Maxima</label>
+                          <input type="number" class="form-control" id="frecuenciaMax" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nucleos" class="form-label">Núcleos</label>
+                        <input type="number" class="form-control" id="nucleos" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="ram" class="form-label">RAM Soportada</label>
+                        <input type="text" class="form-control" id="ram" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="fecha" class="form-label">Fecha de Lanzamiento</label>
+                          <input type="text" class="form-control" id="fecha" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="gpu" class="form-label">GPU integrada</label>
+                        <input type="text" class="form-control" id="gpu" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="familia" class="form-label">Familia</label>
+                        <input type="text" class="form-control" id="familia" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="price" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="price" value="" aria-describedby="priceHelp" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="cod" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="cod" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stock" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stock" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirProcesador()" >Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <footer>
             <div class="container-fluid p-4 fuente footer w-100">
