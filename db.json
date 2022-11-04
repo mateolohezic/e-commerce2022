@@ -1,16 +1,50 @@
 {
-    "productos": [
-      {
-        "name": "i7-12700",
-        "price": "92.399",
-        "categorie": "procesador",
-        "image": "https://http2.mlstatic.com/D_NQ_NP_797907-MLA51838551434_102022-O.webp",
-        "image2": "https://static.techspot.com/articles-info/2391/images/intel-corei7-3.jpg",
-        "image3": "https://www.bestcell.com.ec/imgadmin/storage/imagenes_articulos/793/3363.png.webp",
-        "oferta": false,
-        "destacado": false,
-        "stock": "0",
-        "id": 1
-      }
-    ]
+  "productos": [
+    {
+      "titulo": " i7-12700F",
+      "marca": "Intel",
+      "socket": "FCLGA1700",
+      "familia": "12° Generación",
+      "modelo": " i7-12700F",
+      "nucleos": "12",
+      "ram": "DDR4 / DDR5",
+      "fecha": "05 de enero de 2022",
+      "gpu": "N/A",
+      "frecMax": "4.9",
+      "precio": "98.990",
+      "cod": "p001",
+      "portada": "https://http2.mlstatic.com/D_NQ_NP_624043-MLA52223711660_102022-O.webp",
+      "img2": "https://http2.mlstatic.com/D_NQ_NP_638794-MLA52223706796_102022-O.webp",
+      "img3": "https://http2.mlstatic.com/D_NQ_NP_788539-MLA52223711664_102022-O.webp",
+      "stock": "10",
+      "categoria": "Procesador",
+      "oferta": false,
+      "favorito": true,
+      "publicado": true,
+      "id": 1
+    },
+    {
+      "titulo": "Ryzen 5 5600G",
+      "marca": "AMD",
+      "socket": "AM4",
+      "familia": "5ta Generación",
+      "modelo": "Ryzen 5 5600G",
+      "nucleos": "6",
+      "ram": "DDR4",
+      "fecha": "13 de abril de 2021",
+      "gpu": "AMD Radeon Graphics 7",
+      "frecMax": "4.4",
+      "precio": "43.999",
+      "cod": "p002",
+      "portada": "https://http2.mlstatic.com/D_NQ_NP_720792-MLA51325230530_082022-O.webp",
+      "img2": "https://http2.mlstatic.com/D_NQ_NP_875563-MLA51325230643_082022-O.webp",
+      "img3": "https://http2.mlstatic.com/D_NQ_NP_835553-MLA51325236484_082022-O.webp",
+      "stock": "200",
+      "categoria": "Procesador",
+      "oferta": false,
+      "favorito": false,
+      "publicado": true,
+      "id": 2
+    }
+  ]
 }

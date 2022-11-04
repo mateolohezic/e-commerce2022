@@ -70,19 +70,19 @@
                 <div class="modal-body bgColor2 w-100">
                     <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-4 mt-3">
                       <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirProcesador">Procesador</button>
-                      <button type="button" class="btn w-40 bgColor colorFuente">GPU</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirGPU">GPU</button>
                     </div>
                     <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-4">
-                      <button type="button" class="btn w-40 bgColor colorFuente">PC</button>
-                      <button type="button" class="btn w-40 bgColor colorFuente">Notebook</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirPC">PC</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirNotebook">Notebook</button>
                     </div>
                     <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-4">
-                      <button type="button" class="btn w-40 bgColor colorFuente">Motherboard</button>
-                      <button type="button" class="btn w-40 bgColor colorFuente">Almacenamiento</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirMother">Motherboard</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirAlmacenamiento">Almacenamiento</button>
                     </div>
                     <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3 mb-3">
-                      <button type="button" class="btn w-40 bgColor colorFuente">Pantalla</button>
-                      <button type="button" class="btn w-40 bgColor colorFuente">Otro</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirPantalla">Pantalla</button>
+                      <button type="button" class="btn w-40 bgColor colorFuente" data-bs-toggle="modal" data-bs-target="#añadirOtro">Otro</button>
                     </div>              
                 </div>
                 <div class="modal-footer bgColor">
@@ -97,94 +97,845 @@
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header bgColor">
-                  <h1 class="modal-title fs-5 colorFuente" id="añadirProcesadorLabel">Procesador</h1>
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirProcesadorLabel">Añadir Procesador</h1>
                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bgColor colorFuente">
                   <form>
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="nombre" class="form-label">Nombre del Producto</label>
-                        <input type="text" class="form-control" id="nombre" value="" required>
+                        <label for="nombreProcesador" class="form-label">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="nombreProcesador" value="" required>
                       </div>
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="marca" class="form-label">Marca</label>
-                        <input type="text" class="form-control" id="marca" value="" required>
+                        <label for="marcaProcesador" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaProcesador" value="" required>
                      </div>
                     </div>
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="socket" class="form-label">Socket</label>
-                        <input type="text" class="form-control" id="socket" value="" required>
+                        <label for="socketProcesador" class="form-label">Socket</label>
+                        <input type="text" class="form-control" id="socketProcesador" value="" required>
                       </div>
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="familia" class="form-label">Familia</label>
-                        <input type="text" class="form-control" id="familia" value="" required>
-                      </div>
-                    </div>                                       
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                          <label for="modelo" class="form-label">Modelo</label>
-                          <input type="text" class="form-control" id="modelo" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="nucleos" class="form-label">Núcleos</label>
-                        <input type="number" class="form-control" id="nucleos" value="" required>
+                        <label for="familiaProcesador" class="form-label">Familia</label>
+                        <input type="text" class="form-control" id="familiaProcesador" value="" required>
                       </div>
                     </div>                                       
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="ram" class="form-label">RAM Soportada</label>
-                        <input type="text" class="form-control" id="ram" value="" required>
+                          <label for="modeloProcesador" class="form-label">Modelo</label>
+                          <input type="text" class="form-control" id="modeloProcesador" value="" required>
                       </div>
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                          <label for="fecha" class="form-label">Fecha de Lanzamiento</label>
-                          <input type="text" class="form-control" id="fecha" value="" required>
-                      </div>
-                    </div>                                       
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="gpu" class="form-label">GPU integrada</label>
-                        <input type="text" class="form-control" id="gpu" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="frecuenciaMax" class="form-label">Frecuencia Maxima</label>
-                        <input type="number" class="form-control" id="frecuenciaMax" value="" required>
+                        <label for="nucleosProcesador" class="form-label">Núcleos</label>
+                        <input type="number" class="form-control" id="nucleosProcesador" value="" required>
                       </div>
                     </div>                                       
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="price" class="form-label">Precio</label>
-                        <input type="number" class="form-control" id="price" value="" required>
+                        <label for="ramProcesador" class="form-label">RAM Soportada</label>
+                        <input type="text" class="form-control" id="ramProcesador" value="" required>
                       </div>
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="cod" class="form-label">Código de Producto</label>
-                        <input type="text" class="form-control" id="cod" value="" required>
+                          <label for="fechaProcesador" class="form-label">Fecha de Lanzamiento</label>
+                          <input type="text" class="form-control" id="fechaProcesador" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="gpuProcesador" class="form-label">GPU integrada</label>
+                        <input type="text" class="form-control" id="gpuProcesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="frecuenciaMaxProcesador" class="form-label">Frecuencia Maxima</label>
+                        <input type="number" class="form-control" id="frecuenciaMaxProcesador" value="" step="any" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="priceProcesador" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="priceProcesador" step="any" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codProcesador" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codProcesador" value="" required>
                       </div>
                     </div>
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="image1" class="form-label">Portada</label>
-                        <input type="text" class="form-control" id="image1" value="" required>
+                        <label for="image1Procesador" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1Procesador" value="" required>
                       </div>
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="image2" class="form-label">Imagen 2</label>
-                        <input type="text" class="form-control" id="image2" value="" required>
+                        <label for="image2Procesador" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2Procesador" value="" required>
                       </div>
                     </div>
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="image3" class="form-label">Imagen 3</label>
-                        <input type="text" class="form-control" id="image3" value="" required>
+                        <label for="image3Procesador" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3Procesador" value="" required>
                       </div>
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                          <label for="stock" class="form-label">Unidades en existencia</label>
-                          <input type="number" class="form-control" id="stock" value="" required>
+                          <label for="stockProcesador" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockProcesador" value="" required>
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cerrar</button>
-                      <button type="submit" class="btn bgColor btn-outline-secondary colorFuente" >Añadir</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirProcesador()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirGPU" tabindex="-1" aria-labelledby="añadirGPULabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirGPULabel">Añadir Tarjeta Gráfica</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombreGPU" class="form-label">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="nombreGPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaGPU" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaGPU" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="fabricanteGPU" class="form-label">Fabricante</label>
+                        <input type="text" class="form-control" id="fabricanteGPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="familiaGPU" class="form-label">Familia</label>
+                        <input type="text" class="form-control" id="familiaGPU" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="modeloGPU" class="form-label">Modelo</label>
+                          <input type="text" class="form-control" id="modeloGPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="tamañoGPU" class="form-label">Tamaño de la memoria</label>
+                        <input type="number" class="form-control" id="tamañoGPU" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="tipoGPU" class="form-label">Tipo de memoria</label>
+                        <input type="text" class="form-control" id="tipoGPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="fechaGPU" class="form-label">Fecha de Lanzamiento</label>
+                          <input type="text" class="form-control" id="fechaGPU" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="conectividadGPU" class="form-label">Conectividad</label>
+                        <input type="text" class="form-control" id="conectividadGPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="resMaxGPU" class="form-label">Resolución maxima</label>
+                        <input type="text" class="form-control" id="resMaxGPU" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="pciGPU" class="form-label">Interfaz PCI-Express</label>
+                        <input type="text" class="form-control" id="pciGPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nucleosGPU" class="form-label">Cantidad de núcleos</label>
+                        <input type="number" class="form-control" id="nucleosGPU" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="priceGPU" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="priceGPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codGPU" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codGPU" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1GPU" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1GPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2GPU" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2GPU" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3GPU" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3GPU" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockGPU" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockGPU" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirGPU()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirPC" tabindex="-1" aria-labelledby="añadirPCLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirPCLabel">Añadir PC</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombrePC" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" id="nombrePC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaPC" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaPC" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="fabricantePC" class="form-label">Fabricante</label>
+                        <input type="text" class="form-control" id="fabricantePC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="osPC" class="form-label">Sistema Operativo</label>
+                        <input type="text" class="form-control" id="osPC" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="procesadorPC" class="form-label">Procesador</label>
+                          <input type="text" class="form-control" id="procesadorPC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="cantidadPC" class="form-label">Cantidad de memoria RAM</label>
+                        <input type="number" class="form-control" id="cantidadPC" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="tipoPC" class="form-label">Tipo de memoria RAM</label>
+                        <input type="text" class="form-control" id="tipoPC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="almacenamientoPC" class="form-label">Almacenamiento</label>
+                          <input type="text" class="form-control" id="almacenamientoPC" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="gpuPC" class="form-label">Tarjeta gráfica</label>
+                        <input type="text" class="form-control" id="gpuPC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="motherPC" class="form-label">Motherboard</label>
+                        <input type="text" class="form-control" id="motherPC" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="gabinetePC" class="form-label">Gabinete</label>
+                        <input type="text" class="form-control" id="gabinetePC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="fuentePC" class="form-label">Fuente de alimentación</label>
+                        <input type="text" class="form-control" id="fuentePC" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="pricePC" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="pricePC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codPC" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codPC" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1PC" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1PC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2PC" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2PC" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3PC" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3PC" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockPC" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockPC" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirPC()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirNotebook" tabindex="-1" aria-labelledby="añadirNotebookLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirNotebookLabel">Añadir Notebook</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombreNotebook" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" id="nombreNotebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaNotebook" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaNotebook" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="lineaNotebook" class="form-label">Linea</label>
+                        <input type="text" class="form-control" id="lineaNotebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="modeloNotebook" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modeloNotebook" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="procesadorNotebook" class="form-label">Procesador</label>
+                          <input type="text" class="form-control" id="procesadorNotebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="cantidadNotebook" class="form-label">Cantidad de memoria RAM</label>
+                        <input type="number" class="form-control" id="cantidadNotebook" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="tipoNotebook" class="form-label">Tipo de memoria RAM</label>
+                        <input type="text" class="form-control" id="tipoNotebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="almacenamientoNotebook" class="form-label">Almacenamiento</label>
+                          <input type="text" class="form-control" id="almacenamientoNotebook" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="gpuNotebook" class="form-label">Tarjeta gráfica</label>
+                        <input type="text" class="form-control" id="gpuNotebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="pantallaNotebook" class="form-label">Tamaño de la pantalla</label>
+                        <input type="number" class="form-control" id="pantallaNotebook" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="resolucionNotebook" class="form-label">Resolución maxima</label>
+                        <input type="text" class="form-control" id="resolucionNotebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="frecuenciaNotebook" class="form-label">Frecuencia de actualización</label>
+                        <input type="number" class="form-control" id="frecuenciaNotebook" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="priceNotebook" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="priceNotebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codNotebook" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codNotebook" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1Notebook" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1Notebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2Notebook" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2Notebook" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3Notebook" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3Notebook" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockNotebook" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockNotebook" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirNotebook()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirMother" tabindex="-1" aria-labelledby="añadirMotherLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirMotherLabel">Añadir Motherboard</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombreMother" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" id="nombreMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaMother" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaMother" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="lineaMother" class="form-label">Linea</label>
+                        <input type="text" class="form-control" id="lineaMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="modeloMother" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modeloMother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="socketMother" class="form-label">Socket compatible</label>
+                          <input type="text" class="form-control" id="socketMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="expMother" class="form-label">Ranuras de expansión PCI</label>
+                        <input type="text" class="form-control" id="expMother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="chipsetMother" class="form-label">Chipset Principal</label>
+                        <input type="text" class="form-control" id="chipsetMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="ramMother" class="form-label">Tipo de RAM soportada</label>
+                          <input type="text" class="form-control" id="ramMother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="capacidadMother" class="form-label">Capacidad max. de RAM</label>
+                        <input type="number" class="form-control" id="capacidadMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="slotsMother" class="form-label">Cantidad de slots RAM</label>
+                        <input type="number" class="form-control" id="slotsMother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="hdmiMother" class="form-label">Salidas Hdmi</label>
+                        <input type="number" class="form-control" id="hdmiMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="vgaMother" class="form-label">Salidas VGA</label>
+                        <input type="number" class="form-control" id="vgaMother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="dviMother" class="form-label">Salidas DVI</label>
+                        <input type="number" class="form-control" id="dviMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="ps2Mother" class="form-label">Puertos PS/2</label>
+                        <input type="number" class="form-control" id="ps2Mother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="usb2Mother" class="form-label">Puertos USB 2.0</label>
+                        <input type="number" class="form-control" id="usb2Mother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="usb3Mother" class="form-label">Puertos USB 3.0</label>
+                        <input type="number" class="form-control" id="usb3Mother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="cMother" class="form-label">Puertos Type C</label>
+                        <input type="number" class="form-control" id="cMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="sataMother" class="form-label">Puertos SATA</label>
+                        <input type="number" class="form-control" id="sataMother" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="priceMother" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="priceMother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codMother" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codMother" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1Mother" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1Mother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2Mother" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2Mother" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3Mother" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3Mother" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockMother" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockMother" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirMother()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirAlmacenamiento" tabindex="-1" aria-labelledby="añadirAlmacenamientoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirAlmacenamientoLabel">Añadir Unidad de Almacenamiento</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombreAlmacenamiento" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" id="nombreAlmacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaAlmacenamiento" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaAlmacenamiento" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="tipoAlmacenamiento" class="form-label">Tipo</label>
+                        <input type="text" class="form-control" id="tipoAlmacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="modeloAlmacenamiento" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modeloAlmacenamiento" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="capacidadAlmacenamiento" class="form-label">Capacidad</label>
+                          <input type="number" class="form-control" id="capacidadAlmacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="velLecAlmacenamiento" class="form-label">Velocidad de lectura</label>
+                        <input type="number" class="form-control" id="velLecAlmacenamiento" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="velEscAlmacenamiento" class="form-label">Velocidad de escritura</label>
+                        <input type="number" class="form-control" id="velEscAlmacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="conexionAlmacenamiento" class="form-label">Tipo de conexión</label>
+                          <input type="text" class="form-control" id="conexionAlmacenamiento" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="consumoAlmacenamiento" class="form-label">Consumo</label>
+                        <input type="number" class="form-control" id="consumoAlmacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="cacheAlmacenamiento" class="form-label">Memoria Cache</label>
+                        <input type="number" class="form-control" id="cacheAlmacenamiento" value="" required>
+                      </div>
+                    </div>                                                                      
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="priceAlmacenamiento" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="priceAlmacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codAlmacenamiento" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codAlmacenamiento" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1Almacenamiento" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1Almacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2Almacenamiento" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2Almacenamiento" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3Almacenamiento" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3Almacenamiento" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockAlmacenamiento" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockAlmacenamiento" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirAlmacenamiento()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirPantalla" tabindex="-1" aria-labelledby="añadirPantallaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirPantallaLabel">Añadir Pantalla</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombrePantalla" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" id="nombrePantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaPantalla" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaPantalla" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="tamañoPantalla" class="form-label">Tamaño</label>
+                        <input type="number" class="form-control" id="tamañoPantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="modeloPantalla" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modeloPantalla" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="resolucionPantalla" class="form-label">Resolución</label>
+                          <input type="text" class="form-control" id="resolucionPantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="panelPantalla" class="form-label">Panel</label>
+                        <input type="text" class="form-control" id="panelPantalla" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="frecuenciaPantalla" class="form-label">Frecuencia</label>
+                        <input type="number" class="form-control" id="frecuenciaPantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="contrastePantalla" class="form-label">Contraste</label>
+                          <input type="text" class="form-control" id="contrastePantalla" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="brilloPantalla" class="form-label">Brillo</label>
+                        <input type="number" class="form-control" id="brilloPantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="tiempoPantalla" class="form-label">Tiempo de respuesta</label>
+                        <input type="number" class="form-control" id="tiempoPantalla" value="" required>
+                      </div>
+                    </div>                                                                      
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="anchoPantalla" class="form-label">Ancho</label>
+                        <input type="number" class="form-control" id="anchoPantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="altoPantalla" class="form-label">Alto</label>
+                        <input type="number" class="form-control" id="altoPantalla" value="" required>
+                      </div>
+                    </div>                                                                      
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="pricePantalla" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="pricePantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codPantalla" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codPantalla" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1Pantalla" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1Pantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2Pantalla" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2Pantalla" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3Pantalla" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3Pantalla" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockPantalla" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockPantalla" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirPantalla()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="modal fade text-start" id="añadirOtro" tabindex="-1" aria-labelledby="añadirOtroLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="añadirOtroLabel">Añadir Otro</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form onsubmit="añadirOtro()">
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombreOtro" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" id="nombreOtro" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaOtro" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaOtro" value="" required>
+                     </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-md-12">
+                        <label for="categoriaOtro" class="form-label">Categoría</label>
+                        <input type="text" class="form-control" id="categoriaOtro" value="" required>
+                     </div>
+                    </div>                                                   
+                    <div class="row">
+                      <div class="mb-3 col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-md-12">
+                        <label for="nombreOtro" class="form-label">Descripción</label>
+                        <textarea class="form-control" rows="3" id="descripcionOtro" value="" required></textarea>
+                      </div>
+                    </div>                                                   
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="priceOtro" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="priceOtro" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codOtro" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codOtro" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1Otro" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1Otro" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2Otro" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2Otro" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3Otro" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3Otro" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockOtro" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockOtro" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="submit" class="btn bgColor btn-outline-secondary colorFuente">Añadir</button>
                     </div>
                   </form>
                 </div>
@@ -208,6 +959,7 @@
             </div>
         </footer>
     </main>
+    <script src="./js/adminApp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
