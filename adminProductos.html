@@ -695,7 +695,7 @@
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
                           <label for="capacidadAlmacenamiento" class="form-label">Capacidad</label>
-                          <input type="number" class="form-control" id="capacidadAlmacenamiento" value="" required>
+                          <input type="text" class="form-control" id="capacidadAlmacenamiento" value="" required>
                       </div>
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
                         <label for="velLecAlmacenamiento" class="form-label">Velocidad de lectura</label>
@@ -881,7 +881,7 @@
                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bgColor colorFuente">
-                  <form onsubmit="añadirOtro()">
+                  <form>
                     <div class="row">
                       <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
                         <label for="nombreOtro" class="form-label">Nombre del producto</label>
@@ -935,7 +935,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
-                      <button type="submit" class="btn bgColor btn-outline-secondary colorFuente">Añadir</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirOtro()">Añadir</button>
                     </div>
                   </form>
                 </div>
