@@ -217,15 +217,12 @@
             <div class="row justify-content-center w-100">
                 <div id="carouselProducto" class="carousel slide col-xxl-5 col-xl-5 col-lg-5 col-sm-10 col-md-10 col-10" data-bs-ride="true">
                     <div class="carousel-inner p-5 pt-0">
-                      <div class="carousel-item active">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_797907-MLA51838551434_102022-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 1">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_647891-MLA51838557351_102022-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 2">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_757954-MLA51838557358_102022-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 3">
-                      </div>
+                        <div class="carousel-item active" id="imagen1">
+                        </div>
+                        <div class="carousel-item" id="imagen2">
+                        </div>
+                        <div class="carousel-item" id="imagen3">
+                        </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -235,18 +232,18 @@
                     </button>
                 </div>
                 <div class="d-flex flex-column text-start col-xxl-4 col-xl-4 col-lg-4 col-sm-10 col-md-10 col-10 fuente">
-                    <div class="fs-1">Procesador</div>
-                    <div class="text-muted fs-6 marca">Intel</div>
-                    <div class="fs-3 mt-2">$92.399</div><div class="text-success fs12"><i class="bi bi-credit-card-fill"></i> 12 cuotas sin interés</div>
+                    <div class="fs-1" id="titulo"></div>
+                    <div class="text-muted fs-6 marca" id="marca"></div>
+                    <div class="fs-3 mt-2" id="precio"></div><div class="text-success fs12"><i class="bi bi-credit-card-fill"></i> 12 cuotas sin interés</div>
                     <div class="column text-success border-top border-bottom border-1 my-3 py-3 border-muted">
                         <div><i class="bi bi-check-lg"></i>    Stock disponible</div>
                         <div><i class="bi bi-truck"></i>    Envíos a todo el país</div>
                         <div><i class="bi bi-shield-fill-check"></i>    Compra protegida</div>
                     </div>
-                    <div>Frecuencia máxima: 3.6 GHz</div>
-                    <div>Núcleos: 12</div>
-                    <div>RAM soportadas: DDR4</div>
-                    <div>Socket: FCLGA1700</div>
+                    <div>Frecuencia máxima: <span id="frecuencia"></span> GHz</div>
+                    <div>Núcleos: <span id="nucleos"></span></div>
+                    <div>RAM soportadas: <span id="ram"></span></div>
+                    <div>Socket: <span id="socket"></span></div>
                     <div class="d-flex flex-row-reverse w-100 mb-5 mt-5">
                         <button type="button" class="btn btn-secondary">Comprar</button>
                     </div>
@@ -258,14 +255,13 @@
                 <div class="fs-1 mb-3"><b>Ficha técnica</b></div>
                 <div class="d-flex flex-column">
                     <div class="fs-5 mb-2"><b>Características principales</b></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Familia: Procesadores Intel® Core™ i7 de 12ᵃ Generación</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Modelo: i7-12700</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Fecha de lanzamiento: 05 de enero de 2022</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Cantidad de núcleos: 12</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Frecuencia máxima: 4.90 GHz</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Chipset GPU: No posee</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Familia: <span id="familia"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Modelo: <span id="modelo"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Fecha de lanzamiento: <span id="fecha"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Cantidad de núcleos: <span id="Nucleos"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Frecuencia máxima: <span id="Frecuencia"></span> GHz</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">GPU integrada: <span id="gpu"></span></div>
                 </div>
-                <div class="mt-4"><a href="https://www.intel.la/content/www/xl/es/products/sku/134591/intel-core-i712700-processor-25m-cache-up-to-4-90-ghz/specifications.html?countrylabel=Argentina" class="text-decoration-none text-primary" target="_blank">Más información</a></div>
             </div>
         </section>
         <footer>
@@ -284,6 +280,7 @@
             </div>
         </footer>
     </main>
+    <script src="../js/procesadoresApp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

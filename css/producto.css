@@ -99,10 +99,18 @@
     .imgCarouselProductos{
         height: 30vw;
     }
+    .imagenCarouselProductos{
+        max-height: 30vw;
+        width: auto;
+    }
 }
 @media (max-width: 991px){
     .imgCarouselProductos{
         height: 60vw;
+    }
+    .imagenCarouselProductos{
+        max-height: 60vw;
+        width: auto;
     }
 }
 

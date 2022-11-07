@@ -19,7 +19,7 @@
       "stock": "10",
       "categoria": "Procesador",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 1
     },
@@ -349,7 +349,7 @@
       "stock": "54",
       "categoria": "GPU",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 15
     },
@@ -724,7 +724,7 @@
       "stock": "82",
       "categoria": "PC",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 30
     },
@@ -774,7 +774,7 @@
       "stock": "4",
       "categoria": "Notebook",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 32
     },
@@ -1440,7 +1440,7 @@
       "stock": "7",
       "categoria": "Almacenamiento",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 56
     },
@@ -1761,7 +1761,7 @@
       "frecuencia": "60",
       "contraste": "700:1",
       "brillo": "200",
-      "tiempo": "-2",
+      "tiempo": "2",
       "ancho": "437",
       "alto": "338",
       "precio": "34.799",
@@ -1954,7 +1954,7 @@
       "stock": "23",
       "categoria": "Consola",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 78
     },
@@ -2418,7 +2418,7 @@
       "stock": "78",
       "categoria": "Teclado",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 107
     },
@@ -2706,7 +2706,7 @@
       "stock": "7",
       "categoria": "Auriculares",
       "oferta": false,
-      "favorito": false,
+      "favorito": true,
       "publicado": true,
       "id": 125
     }

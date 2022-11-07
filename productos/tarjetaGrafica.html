@@ -217,15 +217,12 @@
             <div class="row justify-content-center w-100">
                 <div id="carouselProducto" class="carousel slide col-xxl-5 col-xl-5 col-lg-5 col-sm-10 col-md-10 col-10" data-bs-ride="true">
                     <div class="carousel-inner p-5 pt-0">
-                      <div class="carousel-item active">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_703647-MLA45537863085_042021-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 1">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_959963-MLA45537268561_042021-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 2">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_959963-MLA45537268561_042021-O.webp" class="d-block imgCarouselProductos img-fluid mx-auto" alt="Imagen 3">
-                      </div>
+                        <div class="carousel-item active" id="imagen1">
+                        </div>
+                        <div class="carousel-item" id="imagen2">
+                        </div>
+                        <div class="carousel-item" id="imagen3">
+                        </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -235,18 +232,18 @@
                     </button>
                 </div>
                 <div class="d-flex flex-column text-start col-xxl-4 col-xl-4 col-lg-4 col-sm-10 col-md-10 col-10 fuente">
-                    <div class="fs-1">GeForce RTX 3060</div>
-                    <div class="text-muted fs-6 marca">MSI</div>
-                    <div class="fs-3 mt-2">$173.990</div><div class="text-success fs12"><i class="bi bi-credit-card-fill"></i> 12 cuotas sin interés</div>
+                    <div class="fs-1" id="titulo"></div>
+                    <div class="text-muted fs-6 marca" id="marca"></div>
+                    <div class="fs-3 mt-2" id="precio"></div><div class="text-success fs12"><i class="bi bi-credit-card-fill"></i> 12 cuotas sin interés</div>
                     <div class="column text-success border-top border-bottom border-1 my-3 py-3 border-muted">
                         <div><i class="bi bi-check-lg"></i>    Stock disponible</div>
                         <div><i class="bi bi-truck"></i>    Envíos a todo el país</div>
                         <div><i class="bi bi-shield-fill-check"></i>    Compra protegida</div>
                     </div>
-                    <div>Interfaz PCI-Express 4.0</div>
-                    <div>Cantidad de núcleos: 3584</div>
-                    <div>Resolución máxima: 7680x4320</div>
-                    <div>Memoria: 12 GB</div>
+                    <div>Interfaz PCI: <span id="pci"></span></div>
+                    <div>Cantidad de núcleos: <span id="nucleos"></span></div>
+                    <div>Resolución máxima: <span id="resolucion"></span></div>
+                    <div>Memoria: <span id="memoria"></span> GB</div>
                     <div class="d-flex flex-row-reverse w-100 mb-5 mt-5">
                         <button type="button" class="btn btn-secondary">Comprar</button>
                     </div>
@@ -258,16 +255,16 @@
                 <div class="fs-1 mb-3"><b>Ficha técnica</b></div>
                 <div class="d-flex flex-column">
                     <div class="fs-5 mb-2"><b>Características principales</b></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Fabricante: NVIDIA</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Marca: MSI</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Familia: RTX 30 Series</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Modelo: RTX 3060</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Tamaño de la memoria: 12 GB</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Tipo de memoria: GDDR6</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Conectividad: 3 HDMI</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Resolución maxima: 7680 x 4320</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Fabricante: <span id="fabricante"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Marca: <span id="Marca"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Familia: <span id="familia"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Modelo: <span id="modelo"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Fecha de lanzamiento: <span id="fecha"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Tamaño de la memoria: <span id="tamaño"></span> GB</div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Tipo de memoria: <span id="tipo"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Conectividad: <span id="conectividad"></span></div>
+                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Resolución maxima: <span id="Resolucion"></span></div>
                 </div>
-                <div class="mt-4"><a href="https://es.msi.com/Graphics-Card/GeForce-RTX-3060-GAMING-X-12G/Overview" class="text-decoration-none text-primary" target="_blank">Más información</a></div>
             </div>
         </section>
         <footer>
@@ -286,6 +283,7 @@
             </div>
         </footer>
     </main>
+    <script src="../js/tarjetaGraficaApp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
