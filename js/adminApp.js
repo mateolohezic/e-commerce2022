@@ -472,12 +472,26 @@ const imprimirTabla = async () => {
                 <button tton type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarProducto${producto.id}"><i class="bi bi-pencil-fill"></i></button>
               </div>
               <div>
-                <button type="button" class="btn btn-secondary"  onclick="eliminarProducto(${producto.id})"><i class="bi bi-trash"></i></button>
+                <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#borrarProducto${producto.id}"><i class="bi bi-trash"></i></button>
               </div>
             </div>
           </td>
       </tr>
 
+      <div class="modal fade" id="borrarProducto${producto.id}" tabindex="-1" aria-labelledby="borrarProducto${producto.id}Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bgColor2">
+            <div class="modal-body">
+              <h1 class="modal-title fs-5 mb-1mt-3" id="borrarProducto${producto.id}Label">¿Estas seguro?</h1>
+              <div class="fs-6 text-muted mb-4 ">No podrás deshacer esto</div>
+              <div class="d-flex justify-content-evenly mb-4">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" onclick="eliminarProducto(${producto.id})">Borrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       `)).join('')  
   tabla.innerHTML = filas
 }
@@ -568,6 +582,12 @@ const imprimirFavorito = async (id) =>{
       },
     })
     imprimirPublicado()
+  }
+
+  const eliminarProducto = (id) =>{
+    fetch(`http://localhost:3000/productos/${id}`, {
+      method: 'DELETE',
+    });
   }
 
   const coinciden = async (valor) => {
