@@ -1,7 +1,9 @@
 const getProductos = async () => {
     const resultado = await fetch('http://localhost:3000/productos/');
     const resultados = await resultado.json();
+    resultados.sort((a,b) => (a.cod > b.cod) ? 1 : ((b.cod > a.cod) ? -1 : 0))
     resultados.sort((a, b) => +b.favorito-a.favorito)
+    
     return resultados;
   }
 
@@ -495,10 +497,10 @@ const imprimirFavorito = async (id) =>{
     }
   }
 
-  const agregarFavorito = (id) =>{ 
+  const agregarFavorito = async (id) =>{ 
     const favorito = true
   
-    fetch(`http://localhost:3000/productos/${id}`, {
+    await fetch(`http://localhost:3000/productos/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         favorito,
@@ -507,13 +509,13 @@ const imprimirFavorito = async (id) =>{
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-    location.reload();
+    imprimirFavorito()
   }
   
-  const quitarFavorito = (id) =>{
+  const quitarFavorito = async (id) =>{
     const favorito = false
     console.log("hola");
-    fetch(`http://localhost:3000/productos/${id}`, {
+    await fetch(`http://localhost:3000/productos/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         favorito,
@@ -522,7 +524,7 @@ const imprimirFavorito = async (id) =>{
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-    location.reload();
+    imprimirFavorito()
   }
 
   const imprimirPublicado = async (id) =>{
@@ -538,10 +540,10 @@ const imprimirFavorito = async (id) =>{
     }
   }
   
-  const agregarPublicado = (id) =>{
+  const agregarPublicado = async (id) =>{
     const publicado = true
   
-    fetch(`http://localhost:3000/productos/${id}`, {
+    await fetch(`http://localhost:3000/productos/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         publicado,
@@ -550,13 +552,13 @@ const imprimirFavorito = async (id) =>{
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-    location.reload();
+    imprimirPublicado()
   }
   
-  const quitarPublicado = (id) =>{
+  const quitarPublicado = async (id) =>{
     const publicado = false
   
-    fetch(`http://localhost:3000/productos/${id}`, {
+    await fetch(`http://localhost:3000/productos/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
         publicado,
@@ -565,7 +567,7 @@ const imprimirFavorito = async (id) =>{
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-    location.reload();
+    imprimirPublicado()
   }
 
   const coinciden = async (valor) => {

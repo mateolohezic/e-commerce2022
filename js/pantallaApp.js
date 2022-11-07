@@ -59,7 +59,17 @@ const imprimirInformacion = async () =>{
         <img src="${producto.img3}" class="d-block imagenCarouselProductos img-fluid align-self-center" alt="Imagen 3">
     </div>
     `
-    
+    const stockDisponible = document.getElementById(`stockDisponible`)
+    const botonCompra = document.getElementById(`botonCompra`)
+
+    if(producto.stock > 0){
+        stockDisponible.innerHTML = `<span class="text-success"><i class="bi bi-check-lg"></i>    Stock disponible</span> `
+        botonCompra.innerHTML = ` <button type="button" class="btn btn-secondary">Comprar</button> `
+    } else if (producto.stock == 0){
+        stockDisponible.innerHTML = `<span class="text-danger"><i class="bi bi-dash-circle-fill"></i>    No hay stock disponible</span> `
+        botonCompra.innerHTML = ` `
+    }
+
 }
 
 imprimirInformacion()

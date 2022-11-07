@@ -80,3 +80,7 @@ body{
 .buscadorBarraAdmin{
     outline: none;
 }
+
+.columnaNombre{
+    width: 30%;
+}

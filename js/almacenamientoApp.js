@@ -24,6 +24,16 @@ const imprimirInformacion = async () =>{
     const propiedad12 = document.getElementById(`caracteristicasVelLec`)
     const propiedad13 = document.getElementById(`caracteristicasVelEsc`)
     const propiedad14 = document.getElementById(`caracteristicasCapacidad`)
+    const stockDisponible = document.getElementById(`stockDisponible`)
+    const botonCompra = document.getElementById(`botonCompra`)
+
+    if(producto.stock > 0){
+        stockDisponible.innerHTML = `<span class="text-success"><i class="bi bi-check-lg"></i>    Stock disponible</span> `
+        botonCompra.innerHTML = ` <button type="button" class="btn btn-secondary">Comprar</button> `
+    } else if (producto.stock == 0){
+        stockDisponible.innerHTML = `<span class="text-danger"><i class="bi bi-dash-circle-fill"></i>    No hay stock disponible</span> `
+        botonCompra.innerHTML = ` `
+    }
 
     imagen1.innerHTML = `
     <div class="imgCarouselProductos d-flex justify-content-center">
