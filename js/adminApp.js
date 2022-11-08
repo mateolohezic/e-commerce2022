@@ -469,7 +469,7 @@ const imprimirTabla = async () => {
               <div id="estrellaFav${producto.id}">
               </div>
               <div>
-                <button tton type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarProducto${producto.id}"><i class="bi bi-pencil-fill"></i></button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarProcesador${producto.id}" onclick="modalEditar(${producto.id})"><i class="bi bi-pencil-fill"></i></button>
               </div>
               <div>
                 <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#borrarProducto${producto.id}"><i class="bi bi-trash"></i></button>
@@ -492,6 +492,7 @@ const imprimirTabla = async () => {
           </div>
         </div>
       </div>
+      <div id="modalEditar${producto.id}"></div>
       `)).join('')  
   tabla.innerHTML = filas
 }
@@ -622,7 +623,7 @@ const barraSearch = (productosCoinciden) =>{
             <div id="estrellaFav${producto.id}">
             </div>
             <div>
-            <button tton type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarProducto${producto.id}"><i class="bi bi-pencil-fill"></i></button>
+            <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#editarProcesador" onclick="modalEditar(${producto.id})"><i class="bi bi-pencil-fill"></i></button>
             </div>
             <div>
             <button type="button" class="btn btn-secondary"  onclick="eliminarProducto(${producto.id})"><i class="bi bi-trash"></i></button>
@@ -630,6 +631,117 @@ const barraSearch = (productosCoinciden) =>{
         </div>
         </td>
     </tr>
+    <div id="modalEditar${producto.id}"></div>
     `)).join('')  
     tabla.innerHTML = filas
+}
+
+const modalEditar = async (id) =>{
+  const productos = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await productos.json();
+  const modal = document.getElementById(`modalEditar${id}`)
+
+  if (producto.categoria == "Procesador") {
+    modal.innerHTML = (`
+    <section>
+          <div class="modal fade text-start" id="editarProcesador${producto.id}" tabindex="-1" aria-labelledby="editarProcesadorLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bgColor">
+                  <h1 class="modal-title fs-5 colorFuente" id="editarProcesadorLabel">Editar Procesador</h1>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bgColor colorFuente">
+                  <form>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nombreProcesador" class="form-label">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="nombreProcesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="marcaProcesador" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marcaProcesador" value="" required>
+                     </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="socketProcesador" class="form-label">Socket</label>
+                        <input type="text" class="form-control" id="socketProcesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="familiaProcesador" class="form-label">Familia</label>
+                        <input type="text" class="form-control" id="familiaProcesador" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="modeloProcesador" class="form-label">Modelo</label>
+                          <input type="text" class="form-control" id="modeloProcesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="nucleosProcesador" class="form-label">Núcleos</label>
+                        <input type="number" class="form-control" id="nucleosProcesador" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="ramProcesador" class="form-label">RAM Soportada</label>
+                        <input type="text" class="form-control" id="ramProcesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="fechaProcesador" class="form-label">Fecha de Lanzamiento</label>
+                          <input type="text" class="form-control" id="fechaProcesador" value="" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="gpuProcesador" class="form-label">GPU integrada</label>
+                        <input type="text" class="form-control" id="gpuProcesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="frecuenciaMaxProcesador" class="form-label">Frecuencia Maxima</label>
+                        <input type="number" class="form-control" id="frecuenciaMaxProcesador" value="" step="any" required>
+                      </div>
+                    </div>                                       
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="priceProcesador" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="priceProcesador" step="any" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="codProcesador" class="form-label">Código de Producto</label>
+                        <input type="text" class="form-control" id="codProcesador" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image1Procesador" class="form-label">Portada</label>
+                        <input type="text" class="form-control" id="image1Procesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image2Procesador" class="form-label">Imagen 2</label>
+                        <input type="text" class="form-control" id="image2Procesador" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                        <label for="image3Procesador" class="form-label">Imagen 3</label>
+                        <input type="text" class="form-control" id="image3Procesador" value="" required>
+                      </div>
+                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                          <label for="stockProcesador" class="form-label">Unidades en existencia</label>
+                          <input type="number" class="form-control" id="stockProcesador" value="" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
+                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirProcesador()">Añadir</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    `)}
 }
