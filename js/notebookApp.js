@@ -26,7 +26,6 @@ const imprimirInformacion = async () =>{
     const propiedad14 = document.getElementById(`frecuencia`)
     const propiedad16 = document.getElementById(`Procesador`)
     const propiedad17 = document.getElementById(`GPU`)
-    
     propiedad1.innerHTML = `${producto.titulo}`
     propiedad2.innerHTML = `${producto.marca}`
     propiedad3.innerHTML = `$ ${producto.precio}`
