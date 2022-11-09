@@ -82,3 +82,49 @@
         width: 50%;
     }
 }
+
+@media (min-width: 738px) {
+    .card{
+        width: 24%;
+    }
+
+    .imgCard{
+        height: 15vw;
+    }
+
+    .imagenCard{
+        max-height: 15vw;
+        width: auto;
+    }
+    
+}
+
+@media (max-width: 737px) {
+    .card{
+        width: 100%;
+    }
+
+    .imgCard{
+        height: 50vw;
+    }
+
+    .imagenCard{
+        max-height: 50vw;
+        width: auto;
+    }
+}
+
+.card{
+    font-family: 'Roboto Condensed', sans-serif;
+    min-height: 100%;
+    max-width: 100%;
+    border: 0;
+}
+
+.card:hover{
+    cursor: pointer; 
+}
+
+.dropdown-item:hover{
+    cursor: pointer; 
+}

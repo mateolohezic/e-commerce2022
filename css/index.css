@@ -157,3 +157,11 @@
         width: 50%;
     }
 }
+
+.card:hover{
+    cursor: pointer; 
+}
+
+.dropdown-item:hover{
+    cursor: pointer; 
+}

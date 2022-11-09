@@ -145,7 +145,7 @@ const getDestacados = async () =>{
         caja2.innerHTML = ``
     } else if (destacados.length == 1){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -163,7 +163,7 @@ const getDestacados = async () =>{
 
     } else if (destacados.length == 2){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -172,7 +172,7 @@ const getDestacados = async () =>{
         </div>
         `
         card2.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[1].id})">
             <img src="${destacados[1].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -189,7 +189,7 @@ const getDestacados = async () =>{
 
     } else if (destacados.length == 3){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -198,7 +198,7 @@ const getDestacados = async () =>{
         </div>
         `
         card2.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[1].id})">
             <img src="${destacados[1].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -208,7 +208,7 @@ const getDestacados = async () =>{
         `
         
         card3.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[2].id})">
             <img src="${destacados[2].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -224,7 +224,7 @@ const getDestacados = async () =>{
 
     } else if (destacados.length == 4){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -233,7 +233,7 @@ const getDestacados = async () =>{
         </div>
         `
         card2.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[1].id})">
             <img src="${destacados[1].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -243,7 +243,7 @@ const getDestacados = async () =>{
         `
         
         card3.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[2].id})">
             <img src="${destacados[2].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -252,7 +252,7 @@ const getDestacados = async () =>{
         </div>
         `
         card4.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">   
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[3].id})">   
             <img src="${destacados[3].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -267,7 +267,7 @@ const getDestacados = async () =>{
 
     } else if (destacados.length == 5){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -276,7 +276,7 @@ const getDestacados = async () =>{
         </div>
         `
         card2.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[1].id})">
             <img src="${destacados[1].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -286,7 +286,7 @@ const getDestacados = async () =>{
         `
         
         card3.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[2].id})">
             <img src="${destacados[2].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -295,7 +295,7 @@ const getDestacados = async () =>{
         </div>
         `
         card4.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">   
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[3].id})">   
             <img src="${destacados[3].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -304,7 +304,7 @@ const getDestacados = async () =>{
         </div>
         `
         card5.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[4].id})">
             <img src="${destacados[4].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -318,7 +318,7 @@ const getDestacados = async () =>{
 
     } else if (destacados.length == 6){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -327,7 +327,7 @@ const getDestacados = async () =>{
         </div>
         `
         card2.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[1].id})">
             <img src="${destacados[1].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -337,7 +337,7 @@ const getDestacados = async () =>{
         `
         
         card3.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[2].id})">
             <img src="${destacados[2].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -346,7 +346,7 @@ const getDestacados = async () =>{
         </div>
         `
         card4.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">   
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[3].id})">   
             <img src="${destacados[3].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -355,7 +355,7 @@ const getDestacados = async () =>{
         </div>
         `
         card5.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[4].id})">
             <img src="${destacados[4].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -364,7 +364,7 @@ const getDestacados = async () =>{
         </div>
         `
         card6.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[5].id})">
             <img src="${destacados[5].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -378,7 +378,7 @@ const getDestacados = async () =>{
 
     } else if (destacados.length == 7){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -387,7 +387,7 @@ const getDestacados = async () =>{
         </div>
         `
         card2.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[1].id})">
             <img src="${destacados[1].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -397,7 +397,7 @@ const getDestacados = async () =>{
         `
         
         card3.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[2].id})">
             <img src="${destacados[2].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -406,7 +406,7 @@ const getDestacados = async () =>{
         </div>
         `
         card4.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">   
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[3].id})">   
             <img src="${destacados[3].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -415,7 +415,7 @@ const getDestacados = async () =>{
         </div>
         `
         card5.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[4].id})">
             <img src="${destacados[4].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -424,7 +424,7 @@ const getDestacados = async () =>{
         </div>
         `
         card6.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[5].id})">
             <img src="${destacados[5].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -433,7 +433,7 @@ const getDestacados = async () =>{
         </div>
         `
         card7.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[6].id})">
             <img src="${destacados[6].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -445,7 +445,7 @@ const getDestacados = async () =>{
  
     } else if (destacados.length == 8){
         card1.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>            
         <div class="card-body">
@@ -454,7 +454,7 @@ const getDestacados = async () =>{
         </div>
         `
         card2.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[1].id})">
             <img src="${destacados[1].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -464,7 +464,7 @@ const getDestacados = async () =>{
         `
         
         card3.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[2].id})">
             <img src="${destacados[2].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -473,7 +473,7 @@ const getDestacados = async () =>{
         </div>
         `
         card4.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">   
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[3].id})">   
             <img src="${destacados[3].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -482,7 +482,7 @@ const getDestacados = async () =>{
         </div>
         `
         card5.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[4].id})">
             <img src="${destacados[4].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center">
         </div>
         <div class="card-body">
@@ -491,7 +491,7 @@ const getDestacados = async () =>{
         </div>
         `
         card6.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[5].id})">
             <img src="${destacados[5].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -500,7 +500,7 @@ const getDestacados = async () =>{
         </div>
         `
         card7.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[6].id})">
             <img src="${destacados[6].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -510,7 +510,7 @@ const getDestacados = async () =>{
         `
             
         card8.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[7].id})">
             <img src="${destacados[7].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -525,7 +525,7 @@ const getDestacados = async () =>{
 
     if (destacados.length !=0){
     card1Chico.innerHTML = `
-        <div class="imgCard d-flex justify-content-center">
+        <div class="imgCard d-flex justify-content-center" onclick="setX(${destacados[0].id})">
             <img src="${destacados[0].portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >
         </div>
         <div class="card-body">
@@ -536,7 +536,7 @@ const getDestacados = async () =>{
     const cardsChico = document.getElementById(`carouselChicoDestacados`)
     const destacadosUltimo = destacados.slice(-7);
     const cardsChicas = destacadosUltimo.map(producto => (`
-        <div class="carousel-item">
+        <div class="carousel-item" onclick="setX(${producto.id})">
             <div class="card">
                 <div class="imgCard d-flex justify-content-center">
                     <img src="${producto.portada}" class="d-img-top img-fluid p-3 imagenCard align-self-center" >

@@ -121,3 +121,7 @@
 .fs12{
     font-size: 0.8rem;
 }
+
+.dropdown-item:hover{
+    cursor: pointer; 
+}
