@@ -609,28 +609,43 @@ const barraSearch = (productosCoinciden) =>{
     const tabla = document.getElementById(`tabla`)
     const filas = productos.map(producto => (`
     <tr>
-        <td>${producto.cod}<img src="${producto.portada}" width="0" height="0" onload= "imprimirFavorito(${producto.id}); imprimirPublicado(${producto.id}); imprimirEditar(${producto.id})"></td>
-        <td>${producto.titulo}</td>
-        <td>${producto.categoria}</td>
-        <td>$ ${producto.precio}</td>
-        <td>${producto.stock}</td>
-        <td>
+      <td>${producto.cod}<img src="${producto.portada}" width="0" height="0" onload= "imprimirFavorito(${producto.id}); imprimirPublicado(${producto.id}); imprimirEditar(${producto.id})"></td>
+      <td>${producto.titulo}</td>
+      <td>${producto.categoria}</td>
+      <td>$ ${producto.precio}</td>
+      <td>${producto.stock}</td>
+      <td>
         <div id="publicado${producto.id}">
         </div>
-        </td>
-        <td>
+      </td>
+      <td>
         <div class="d-flex justify-content-evenly" >                                    
-            <div id="estrellaFav${producto.id}">
-            </div>
-            <div>
-            <button type="button" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button>
-            </div>
-            <div>
-            <button type="button" class="btn btn-secondary"  onclick="eliminarProducto(${producto.id})"><i class="bi bi-trash"></i></button>
-            </div>
+          <div id="estrellaFav${producto.id}">
+          </div>
+          <div>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editar${producto.id}"><i class="bi bi-pencil-fill"></i></button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#borrarProducto${producto.id}"><i class="bi bi-trash"></i></button>
+          </div>
         </div>
-        </td>
-    </tr>
+      </td>
+  </tr>
+  <div class="modal fade" id="borrarProducto${producto.id}" tabindex="-1" aria-labelledby="borrarProducto${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bgColor2">
+        <div class="modal-body">
+          <h1 class="modal-title fs-5 mb-1mt-3" id="borrarProducto${producto.id}Label">¿Estas seguro?</h1>
+          <div class="fs-6 text-muted mb-4 ">No podrás deshacer esto</div>
+          <div class="d-flex justify-content-evenly mb-4">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger" onclick="eliminarProducto(${producto.id})">Borrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="editarModal${producto.id}"></div>
     `)).join('')  
     tabla.innerHTML = filas
 }

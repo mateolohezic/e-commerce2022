@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+.offcanvas{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.fuente{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuente{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuente2{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuente2:hover{
+    color: #F6F7D3;
+    font-size: 1.2rem;
+}
+
+.colorFuenteNav{
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.colorFuenteNav:hover{
+    color: #F6F7D3;
+}
+
+.navbar{
+    background-color: #333C4A;
+}
+
+.fixedMid {
+    position: fixed;
+    top: 50vh;
+    right: 100vw;
+    left: 0;
+    bottom: 0;
+    z-index: 1030;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0;
+}
+
+.fixedMid:hover{
+    padding-left: 1rem;
+}
+
+.dropdown-menu-dark{
+    --bs-dropdown-link-active-bg: #333C4A;
+}
+
+.offcanvas-body{
+    margin-top: -0.6rem;
+}
+
+.footer{
+    background-color: #333C4A;
+}
+
+@media (max-width:991px) {
+    .flexNavBar{
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        border-top: 1px solid #495664;
+    }
+}
+
+@media (min-width:992px) {
+    .flexNavBar{
+        width: 50%;
+    }
+}

@@ -40,229 +40,100 @@
                         <li class="list-group-item ms-5">
                             <div class="dropdown">
                                 <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    PCs y Notebooks <span class="text-muted"> (19)</span>
+                                    PCs y Notebooks <span class="text-muted" id="numeroCategoria1"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">PC de Escritorio</a></li>
-                                    <li><a class="dropdown-item" href="#">Notebook</a></li>
-                                    <li><a class="dropdown-item" href="#">All in One</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(1)">PC de Escritorio</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(2)">Notebook</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
-                            <div class="dropdown"> 
+                            <span class="btn border-0" onclick="setCategoria(3)">
+                                Consolas <span class="text-muted" id="numeroCategoria2"></span>
+                            </span>
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
                                 <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Consolas <span class="text-muted"> (19)</span>
+                                    Procesadores y Coolers CPUs <span class="text-muted" id="numeroCategoria3"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Playstation</a></li>
-                                    <li><a class="dropdown-item" href="#">Xbox</a></li>
-                                    <li><a class="dropdown-item" href="#">Otras</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(4)">Intel</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(5)">AMD</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(6)">Refrigeración</a></li>
+                                </ul>
+                            </div>        
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <span class="btn border-0" onclick="setCategoria(7)">
+                                Motherboards <span class="text-muted" id="numeroCategoria4"></span>
+                            </span>
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <span class="btn border-0" onclick="setCategoria(8)">
+                                Memorias RAM <span class="text-muted" id="numeroCategoria5"></span>
+                            </span>
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <span class="btn border-0" onclick="setCategoria(9)">
+                                Almacenamiento <span class="text-muted" id="numeroCategoria6"></span>
+                            </span>
+                        </li>
+                        <li class="list-group-item ms-5">
+                            <div class="dropdown">
+                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Tarjetas Gráficas <span class="text-muted" id="numeroCategoria7"></span>
+                                </span>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" onclick="setCategoria(10)">NVIDIA</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(11)">AMD</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
                             <div class="dropdown">
                                 <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Procesadores y Coolers CPUs <span class="text-muted"> (19)</span>
+                                    Gabinetes y Fuentes <span class="text-muted" id="numeroCategoria8"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Intel</a></li>
-                                    <li><a class="dropdown-item" href="#">AMD</a></li>
-                                    <li><a class="dropdown-item" href="#">Coolers</a></li>
-                                    <li><a class="dropdown-item" href="#">Refrigeración Liquida</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(12)">Gabinetes</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(13)">Fuente</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Mothers <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">AMD</a></li>
-                                    <li><a class="dropdown-item" href="#">Intel</a></li>
-                                    <li><a class="dropdown-item" href="#">Combo de actualización</a></li>
-                                </ul>
-                            </div>        
+                            <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false" onclick="setCategoria(14)">
+                                Monitores <span class="text-muted" id="numeroCategoria9"></span>
+                            </span>
                         </li>
                         <li class="list-group-item ms-5">
                             <div class="dropdown">
                                 <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Memorias RAM <span class="text-muted"> (19)</span>
+                                    Teclados y Mouses <span class="text-muted" id="numeroCategoria10"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">DDR2</a></li>
-                                    <li><a class="dropdown-item" href="#">DDR3</a></li>
-                                    <li><a class="dropdown-item" href="#">DDR4</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(15)">Teclados</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(16)">Mouses</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Almacenamiento <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Disco Duro</a></li>
-                                    <li><a class="dropdown-item" href="#">Disco Solido</a></li>
-                                    <li><a class="dropdown-item" href="#">Disco Externo</a></li>
-                                </ul>
-                            </div>        
-                        </li>
-                        <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Tarjetas Graficas <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">NVIDIA</a></li>
-                                    <li><a class="dropdown-item" href="#">AMD</a></li>
-                                </ul>
-                            </div>        
-                        </li>
-                        <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Gabinetes y Fuentes <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Gabinetes con fuente</a></li>
-                                    <li><a class="dropdown-item" href="#">Gabinetes sin fuente</a></li>
-                                    <li><a class="dropdown-item" href="#">Fuente</a></li>
-                                </ul>
-                            </div>        
-                        </li>
-                        <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Pantallas <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Monitores</a></li>
-                                    <li><a class="dropdown-item" href="#">Televisores</a></li>
-                                </ul>
-                            </div>        
-                        </li>
-                        <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Teclados y Mouses <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Teclados</a></li>
-                                    <li><a class="dropdown-item" href="#">Mouses</a></li>
-                                    <li><a class="dropdown-item" href="#">Combo Teclado + Mouse</a></li>
-                                </ul>
-                            </div>        
-                        </li>
-                        <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Audio <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Auriculares</a></li>
-                                    <li><a class="dropdown-item" href="#">Parlantes</a></li>
-                                    <li><a class="dropdown-item" href="#">Microfono</a></li>
-                                </ul>
-                            </div>        
-                        </li>
-                        <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Perifericos <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Joystick</a></li>
-                                    <li><a class="dropdown-item" href="#">Web-cam</a></li>
-                                </ul>
-                            </div>        
-                        </li>
-                        <li class="list-group-item ms-5">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Cables y cargadores <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Adaptadores</a></li>
-                                    <li><a class="dropdown-item" href="#">Cables</a></li>
-                                </ul>
-                            </div>        
+                            <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false" onclick="setCategoria(17)">
+                                Auriculares <span class="text-muted" id="numeroCategoria11"></span>
+                            </span>
                         </li>
                         <li class="list-group-item ms-5 mb-4">
-                            <div class="dropdown">
-                                <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Oficina <span class="text-muted"> (19)</span>
-                                </span>
-                                <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Estabilizadores</a></li>
-                                    <li><a class="dropdown-item" href="#">Extensores de Wi-Fi</a></li>
-                                </ul>
-                            </div>        
+                            <span class="btn border-0" onclick="setCategoria(18)">
+                                Otros <span class="text-muted" id="numeroCategoria12"></span>
+                            </span>
                         </li>
                     </div>
-                    <h5 class="offcanvas-title mb-2 ms-3 border-top pt-3 border-1">Ofertas</h5>
+                    <h5 class="offcanvas-title mb-2 ms-3 border-top pt-3 border-1">Destacados</h5>
                     <h5 class="offcanvas-title mb-2 ms-3 border-left border-1">Mas vendidos!</h5>
                     <h5 class="offcanvas-title mb-2 ms-3 border-left border-1">Soporte</h5>
                     <h5 class="offcanvas-title mb-2 ms-3 border-left border-1">Nosotros</h5>
                     <h5 class="offcanvas-title ms-3 border-left border-1 mb-3">Sponsors</h5>
-                </div>
-            </div>
-        </section>
-        <div class="text-start volverinicio mt-3 ms-4 fs-3">
-            <a href="../index.html" class="text-decoration-none inicio fuente"><i class="bi bi-arrow-left-short"></i>Inicio</a>
-        </div>
-        <section>
-            <div class="row justify-content-center w-100">
-                <div id="carouselProducto" class="carousel slide col-xxl-5 col-xl-5 col-lg-5 col-sm-10 col-md-10 col-10" data-bs-ride="true">
-                    <div class="carousel-inner p-5 pt-0">
-                        <div class="carousel-item active" id="imagen1">
-                        </div>
-                        <div class="carousel-item" id="imagen2">
-                        </div>
-                        <div class="carousel-item" id="imagen3">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="d-flex flex-column text-start col-xxl-4 col-xl-4 col-lg-4 col-sm-10 col-md-10 col-10 fuente">
-                    <div class="fs-1" id="titulo"></div>
-                    <div class="text-muted fs-6 marca" id="marca"></div>
-                    <div class="fs-3 mt-2" id="precio"></div><div class="text-success fs12"><i class="bi bi-credit-card-fill"></i> 12 cuotas sin interés</div>
-                    <div class="column border-top border-bottom border-1 my-3 py-3 border-muted">
-                        <div id="stockDisponible"></div>
-                        <div class="text-success "><i class="bi bi-truck"></i>    Envíos a todo el país</div>
-                        <div class="text-success "><i class="bi bi-shield-fill-check"></i>    Compra protegida</div>
-                    </div>
-                    <div>Tamaño de la pantalla: <span id="tamaño"></span>"</div>
-                    <div>Procesador:  <span id="procesador"></span></div>
-                    <div>Tarjeta gráfica: <span id="gpu"></span></div>
-                    <div>Memoria RAM: <span id="ram"></span></div>
-                    <div class="d-flex flex-row-reverse w-100 mb-5 mt-5" id="botonCompra">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="column mt-5">
-            <div class="col-10 mx-auto border-top border-1 pt-5 fuente mb-5">
-                <div class="fs-1 mb-3"><b>Ficha técnica</b></div>
-                <div class="d-flex flex-column">
-                    <div class="fs-5 mb-2"><b>Características principales</b></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Linea: <span id="linea"></span></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Modelo: <span id="modelo"></span></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Memoria RAM: <span id="Ram"></span> GB</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Tipo de memoria RAM: <span id="tipoRam"></span></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Tamaño de la pantalla: <span id="Tamaño"></span>"</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Resolución de la pantalla: <span id="resolucion"></span></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Frecuencia de actualización de la pantalla: <span id="frecuencia"></span> Hz</div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Procesador: <span id="Procesador"></span></div>
-                    <div class="fs-6 ms-2 mb-2 border-bottom border-1">Tarjeta gráfica: <span id="GPU"></span></div>
                 </div>
             </div>
         </section>

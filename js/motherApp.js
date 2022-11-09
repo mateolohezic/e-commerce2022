@@ -80,3 +80,8 @@ const imprimirInformacion = async () =>{
 }
 
 imprimirInformacion()
+
+const setCategoria = async (numeroCat) => {
+    localStorage.setItem("categoria", numeroCat)
+    window.location.href= "./categoria.html"
+}

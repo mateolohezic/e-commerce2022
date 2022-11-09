@@ -578,6 +578,11 @@ const setX = async (id) => {
     }
 }
 
+const setCategoria = async (numeroCat) => {
+    localStorage.setItem("categoria", numeroCat)
+    window.location.href= "./categoria.html"
+}
+
 const imprimirNumerosCategorias = async () =>{
     const productosTotales = await getProductos()
     const numero1 = document.getElementById(`numeroCategoria1`)

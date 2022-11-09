@@ -43,13 +43,13 @@
                                     PCs y Notebooks <span class="text-muted" id="numeroCategoria1"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">PC de Escritorio</a></li>
-                                    <li><a class="dropdown-item" href="#">Notebook</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(1)">PC de Escritorio</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(2)">Notebook</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
-                            <span class="btn border-0">
+                            <span class="btn border-0" onclick="setCategoria(3)">
                                 Consolas <span class="text-muted" id="numeroCategoria2"></span>
                             </span>
                         </li>
@@ -59,24 +59,24 @@
                                     Procesadores y Coolers CPUs <span class="text-muted" id="numeroCategoria3"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Intel</a></li>
-                                    <li><a class="dropdown-item" href="#">AMD</a></li>
-                                    <li><a class="dropdown-item" href="#">Refrigeración</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(4)">Intel</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(5)">AMD</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(6)">Refrigeración</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
-                            <span class="btn border-0" >
+                            <span class="btn border-0" onclick="setCategoria(7)">
                                 Motherboards <span class="text-muted" id="numeroCategoria4"></span>
                             </span>
                         </li>
                         <li class="list-group-item ms-5">
-                            <span class="btn border-0" >
+                            <span class="btn border-0" onclick="setCategoria(8)">
                                 Memorias RAM <span class="text-muted" id="numeroCategoria5"></span>
                             </span>
                         </li>
                         <li class="list-group-item ms-5">
-                            <span class="btn border-0" >
+                            <span class="btn border-0" onclick="setCategoria(9)">
                                 Almacenamiento <span class="text-muted" id="numeroCategoria6"></span>
                             </span>
                         </li>
@@ -86,8 +86,8 @@
                                     Tarjetas Gráficas <span class="text-muted" id="numeroCategoria7"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">NVIDIA</a></li>
-                                    <li><a class="dropdown-item" href="#">AMD</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(10)">NVIDIA</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(11)">AMD</a></li>
                                 </ul>
                             </div>        
                         </li>
@@ -97,13 +97,13 @@
                                     Gabinetes y Fuentes <span class="text-muted" id="numeroCategoria8"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Gabinetes</a></li>
-                                    <li><a class="dropdown-item" href="#">Fuente</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(12)">Gabinetes</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(13)">Fuente</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
-                            <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false" onclick="setCategoria(14)">
                                 Monitores <span class="text-muted" id="numeroCategoria9"></span>
                             </span>
                         </li>
@@ -113,18 +113,18 @@
                                     Teclados y Mouses <span class="text-muted" id="numeroCategoria10"></span>
                                 </span>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="#">Teclados</a></li>
-                                    <li><a class="dropdown-item" href="#">Mouses</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(15)">Teclados</a></li>
+                                    <li><a class="dropdown-item" onclick="setCategoria(16)">Mouses</a></li>
                                 </ul>
                             </div>        
                         </li>
                         <li class="list-group-item ms-5">
-                            <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false" onclick="setCategoria(17)">
                                 Auriculares <span class="text-muted" id="numeroCategoria11"></span>
                             </span>
                         </li>
                         <li class="list-group-item ms-5 mb-4">
-                            <span class="btn border-0">
+                            <span class="btn border-0" onclick="setCategoria(18)">
                                 Otros <span class="text-muted" id="numeroCategoria12"></span>
                             </span>
                         </li>
@@ -279,7 +279,7 @@
             <div class="container-fluid p-4 fuente footer w-100">
                 <div class="row">
                     <div class="text-lg-start text-center col-lg-4 m-lg-0 m-1">
-                        <a href="#" class="text-decoration-none colorFuente2">Preguntas Frecuentas</a>
+                        <a href="404" class="text-decoration-none colorFuente2">Preguntas Frecuentas</a>
                     </div>
                     <div class="text-center col-lg-4 col-12 m-lg-0 m-1 colorFuente">&copy 2022 <b>Mateo Lohezic</b> - Todos los derechos reservados.</div>
                     <div class="text-lg-end text-center col-lg-4 fs-5 m-lg-0 m-1 ">
