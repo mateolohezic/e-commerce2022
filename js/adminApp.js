@@ -455,7 +455,7 @@ const imprimirTabla = async () => {
     const tabla = document.getElementById ("tabla");
     const filas = productos.map(producto => (`
       <tr>
-          <td>${producto.cod}<img src="${producto.portada}" width="0" height="0" onload= "imprimirFavorito(${producto.id}); imprimirPublicado(${producto.id});"></td>
+          <td>${producto.cod}<img src="${producto.portada}" width="0" height="0" onload= "imprimirFavorito(${producto.id}); imprimirPublicado(${producto.id}); imprimirEditar(${producto.id})"></td>
           <td>${producto.titulo}</td>
           <td>${producto.categoria}</td>
           <td>$ ${producto.precio}</td>
@@ -469,7 +469,7 @@ const imprimirTabla = async () => {
               <div id="estrellaFav${producto.id}">
               </div>
               <div>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editarProcesador${producto.id}" onclick="modalEditar(${producto.id})"><i class="bi bi-pencil-fill"></i></button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editar${producto.id}"><i class="bi bi-pencil-fill"></i></button>
               </div>
               <div>
                 <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#borrarProducto${producto.id}"><i class="bi bi-trash"></i></button>
@@ -492,7 +492,7 @@ const imprimirTabla = async () => {
           </div>
         </div>
       </div>
-      <div id="modalEditar${producto.id}"></div>
+      <div id="editarModal${producto.id}"></div>
       `)).join('')  
   tabla.innerHTML = filas
 }
@@ -609,7 +609,7 @@ const barraSearch = (productosCoinciden) =>{
     const tabla = document.getElementById(`tabla`)
     const filas = productos.map(producto => (`
     <tr>
-        <td>${producto.cod}<img src="${producto.portada}" width="0" height="0" onload= "imprimirFavorito(${producto.id}); imprimirPublicado(${producto.id});"></td>
+        <td>${producto.cod}<img src="${producto.portada}" width="0" height="0" onload= "imprimirFavorito(${producto.id}); imprimirPublicado(${producto.id}); imprimirEditar(${producto.id})"></td>
         <td>${producto.titulo}</td>
         <td>${producto.categoria}</td>
         <td>$ ${producto.precio}</td>
@@ -623,7 +623,7 @@ const barraSearch = (productosCoinciden) =>{
             <div id="estrellaFav${producto.id}">
             </div>
             <div>
-            <button type="button" class="btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#editarProcesador" onclick="modalEditar(${producto.id})"><i class="bi bi-pencil-fill"></i></button>
+            <button type="button" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i></button>
             </div>
             <div>
             <button type="button" class="btn btn-secondary"  onclick="eliminarProducto(${producto.id})"><i class="bi bi-trash"></i></button>
@@ -631,117 +631,874 @@ const barraSearch = (productosCoinciden) =>{
         </div>
         </td>
     </tr>
-    <div id="modalEditar${producto.id}"></div>
     `)).join('')  
     tabla.innerHTML = filas
 }
 
-const modalEditar = async (id) =>{
-  const productos = await fetch(`http://localhost:3000/productos/${id}`);
-  const producto = await productos.json();
-  const modal = document.getElementById(`modalEditar${id}`)
-
-  if (producto.categoria == "Procesador") {
-    modal.innerHTML = (`
-    <section>
-          <div class="modal fade text-start" id="editarProcesador${producto.id}" tabindex="-1" aria-labelledby="editarProcesadorLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header bgColor">
-                  <h1 class="modal-title fs-5 colorFuente" id="editarProcesadorLabel">Editar Procesador</h1>
-                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body bgColor colorFuente">
-                  <form>
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="nombreProcesador" class="form-label">Nombre del Producto</label>
-                        <input type="text" class="form-control" id="nombreProcesador" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="marcaProcesador" class="form-label">Marca</label>
-                        <input type="text" class="form-control" id="marcaProcesador" value="" required>
-                     </div>
-                    </div>
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="socketProcesador" class="form-label">Socket</label>
-                        <input type="text" class="form-control" id="socketProcesador" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="familiaProcesador" class="form-label">Familia</label>
-                        <input type="text" class="form-control" id="familiaProcesador" value="" required>
-                      </div>
-                    </div>                                       
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                          <label for="modeloProcesador" class="form-label">Modelo</label>
-                          <input type="text" class="form-control" id="modeloProcesador" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="nucleosProcesador" class="form-label">Núcleos</label>
-                        <input type="number" class="form-control" id="nucleosProcesador" value="" required>
-                      </div>
-                    </div>                                       
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="ramProcesador" class="form-label">RAM Soportada</label>
-                        <input type="text" class="form-control" id="ramProcesador" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                          <label for="fechaProcesador" class="form-label">Fecha de Lanzamiento</label>
-                          <input type="text" class="form-control" id="fechaProcesador" value="" required>
-                      </div>
-                    </div>                                       
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="gpuProcesador" class="form-label">GPU integrada</label>
-                        <input type="text" class="form-control" id="gpuProcesador" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="frecuenciaMaxProcesador" class="form-label">Frecuencia Maxima</label>
-                        <input type="number" class="form-control" id="frecuenciaMaxProcesador" value="" step="any" required>
-                      </div>
-                    </div>                                       
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="priceProcesador" class="form-label">Precio</label>
-                        <input type="number" class="form-control" id="priceProcesador" step="any" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="codProcesador" class="form-label">Código de Producto</label>
-                        <input type="text" class="form-control" id="codProcesador" value="" required>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="image1Procesador" class="form-label">Portada</label>
-                        <input type="text" class="form-control" id="image1Procesador" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="image2Procesador" class="form-label">Imagen 2</label>
-                        <input type="text" class="form-control" id="image2Procesador" value="" required>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                        <label for="image3Procesador" class="form-label">Imagen 3</label>
-                        <input type="text" class="form-control" id="image3Procesador" value="" required>
-                      </div>
-                      <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
-                          <label for="stockProcesador" class="form-label">Unidades en existencia</label>
-                          <input type="number" class="form-control" id="stockProcesador" value="" required>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Volver</button>
-                      <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="añadirProcesador()">Añadir</button>
-                    </div>
-                  </form>
-                </div>
+const imprimirEditar = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const modal = document.getElementById(`editarModal${id}`)
+  if (producto.categoria == "Procesador"){
+  modal.innerHTML = `
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id=""editar${producto.id}Label">Editar Procesador</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombreProcesador" class="form-label">Nombre del Producto</label>
+                <input type="text" class="form-control" id="nombreProcesador${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaProcesador" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaProcesador${producto.id}" value="${producto.marca}" required>
+            </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="socketProcesador" class="form-label">Socket</label>
+                <input type="text" class="form-control" id="socketProcesador${producto.id}" value="${producto.socket}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="familiaProcesador" class="form-label">Familia</label>
+                <input type="text" class="form-control" id="familiaProcesador${producto.id}" value="${producto.familia}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="modeloProcesador" class="form-label">Modelo</label>
+                  <input type="text" class="form-control" id="modeloProcesador${producto.id}" value="${producto.modelo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nucleosProcesador" class="form-label">Núcleos</label>
+                <input type="number" class="form-control" id="nucleosProcesador${producto.id}" value="${producto.nucleos}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="ramProcesador" class="form-label">RAM Soportada</label>
+                <input type="text" class="form-control" id="ramProcesador${producto.id}" value="${producto.ram}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="fechaProcesador" class="form-label">Fecha de Lanzamiento</label>
+                  <input type="text" class="form-control" id="fechaProcesador${producto.id}" value="${producto.fecha}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="gpuProcesador" class="form-label">GPU integrada</label>
+                <input type="text" class="form-control" id="gpuProcesador${producto.id}" value="${producto.gpu}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="frecuenciaMaxProcesador" class="form-label">Frecuencia Maxima</label>
+                <input type="number" class="form-control" id="frecuenciaMaxProcesador${producto.id}" value="${producto.frecMax}" step="any" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="priceProcesador" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="priceProcesador${producto.id}" step="any" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codProcesador" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codProcesador${producto.id}" value="${producto.cod}" required>
               </div>
             </div>
-          </div>
-        </section>
-    `)}
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1Procesador" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1Procesador${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2Procesador" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2Procesador${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3Procesador" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3Procesador${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockProcesador" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockProcesador${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarProcesador(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  } else if (producto.categoria == "GPU"){
+  modal.innerHTML = `
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id=""editar${producto.id}Label">Editar Tarjeta Gráfica</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombreGPU" class="form-label">Nombre del Producto</label>
+                <input type="text" class="form-control" id="nombreGPU${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaGPU" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaGPU${producto.id}" value="${producto.marca}" required>
+            </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="fabricanteGPU" class="form-label">Fabricante</label>
+                <input type="text" class="form-control" id="fabricanteGPU${producto.id}" value="${producto.fabricante}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="familiaGPU" class="form-label">Familia</label>
+                <input type="text" class="form-control" id="familiaGPU${producto.id}" value="${producto.familia}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="modeloGPU" class="form-label">Modelo</label>
+                  <input type="text" class="form-control" id="modeloGPU${producto.id}" value="${producto.modelo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="tamañoGPU" class="form-label">Tamaño de la memoria</label>
+                <input type="number" class="form-control" id="tamañoGPU${producto.id}" value="${producto.tamaño}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="tipoGPU" class="form-label">Tipo de memoria</label>
+                <input type="text" class="form-control" id="tipoGPU${producto.id}" value="${producto.tipo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="fechaGPU" class="form-label">Fecha de Lanzamiento</label>
+                  <input type="text" class="form-control" id="fechaGPU${producto.id}" value="${producto.fecha}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="conectividadGPU" class="form-label">Conectividad</label>
+                <input type="text" class="form-control" id="conectividadGPU${producto.id}" value="${producto.conectividad}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="resMaxGPU" class="form-label">Resolución maxima</label>
+                <input type="text" class="form-control" id="resMaxGPU${producto.id}" value="${producto.resMax}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="pciGPU" class="form-label">Interfaz PCI-Express</label>
+                <input type="text" class="form-control" id="pciGPU${producto.id}" value="${producto.pci}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nucleosGPU" class="form-label">Cantidad de núcleos</label>
+                <input type="number" class="form-control" id="nucleosGPU${producto.id}" value="${producto.nucleos}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="priceGPU" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="priceGPU${producto.id}" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codGPU" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codGPU${producto.id}" value="${producto.cod}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1GPU" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1GPU${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2GPU" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2GPU${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3GPU" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3GPU${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockGPU" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockGPU${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarGPU(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  } else if (producto.categoria == "PC"){
+  modal.innerHTML = `
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id="editar${producto.id}Label">Editar PC</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombrePC" class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombrePC${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaPC" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaPC${producto.id}" value="${producto.marca}" required>
+            </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="fabricantePC" class="form-label">Fabricante</label>
+                <input type="text" class="form-control" id="fabricantePC${producto.id}" value="${producto.fabricante}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="osPC" class="form-label">Sistema Operativo</label>
+                <input type="text" class="form-control" id="osPC${producto.id}" value="${producto.os}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="procesadorPC" class="form-label">Procesador</label>
+                  <input type="text" class="form-control" id="procesadorPC${producto.id}" value="${producto.procesador}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="cantidadPC" class="form-label">Cantidad de memoria RAM</label>
+                <input type="number" class="form-control" id="cantidadPC${producto.id}" value="${producto.cantidadRam}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="tipoPC" class="form-label">Tipo de memoria RAM</label>
+                <input type="text" class="form-control" id="tipoPC${producto.id}" value="${producto.tipoRam}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="almacenamientoPC" class="form-label">Almacenamiento</label>
+                  <input type="text" class="form-control" id="almacenamientoPC${producto.id}" value="${producto.almacenamiento}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="gpuPC" class="form-label">Tarjeta gráfica</label>
+                <input type="text" class="form-control" id="gpuPC${producto.id}" value="${producto.gpu}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="motherPC" class="form-label">Motherboard</label>
+                <input type="text" class="form-control" id="motherPC${producto.id}" value="${producto.mother}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="gabinetePC" class="form-label">Gabinete</label>
+                <input type="text" class="form-control" id="gabinetePC${producto.id}" value="${producto.gabinete}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="fuentePC" class="form-label">Fuente de alimentación</label>
+                <input type="text" class="form-control" id="fuentePC${producto.id}" value="${producto.fuente}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="pricePC" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="pricePC${producto.id}" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codPC" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codPC${producto.id}" value="${producto.cod}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1PC" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1PC${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2PC" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2PC${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3PC" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3PC${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockPC" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockPC${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarPC(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  } else if (producto.categoria == "Notebook"){
+  modal.innerHTML = `
+  
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id="editar${producto.id}Label">Editar Notebook</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombreNotebook" class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombreNotebook${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaNotebook" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaNotebook${producto.id}" value="${producto.marca}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="lineaNotebook" class="form-label">Linea</label>
+                <input type="text" class="form-control" id="lineaNotebook${producto.id}" value="${producto.linea}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="modeloNotebook" class="form-label">Modelo</label>
+                <input type="text" class="form-control" id="modeloNotebook${producto.id}" value="${producto.modelo}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="procesadorNotebook" class="form-label">Procesador</label>
+                  <input type="text" class="form-control" id="procesadorNotebook${producto.id}" value="${producto.procesador}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="cantidadNotebook" class="form-label">Cantidad de memoria RAM</label>
+                <input type="number" class="form-control" id="cantidadNotebook${producto.id}" value="${producto.cantidadRam}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="tipoNotebook" class="form-label">Tipo de memoria RAM</label>
+                <input type="text" class="form-control" id="tipoNotebook${producto.id}" value="${producto.tipoRam}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="almacenamientoNotebook" class="form-label">Almacenamiento</label>
+                  <input type="text" class="form-control" id="almacenamientoNotebook${producto.id}" value="${producto.almacenamiento}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="gpuNotebook" class="form-label">Tarjeta gráfica</label>
+                <input type="text" class="form-control" id="gpuNotebook${producto.id}" value="${producto.gpu}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="pantallaNotebook" class="form-label">Tamaño de la pantalla</label>
+                <input type="number" class="form-control" id="pantallaNotebook${producto.id}" value="${producto.pantalla}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="resolucionNotebook" class="form-label">Resolución maxima</label>
+                <input type="text" class="form-control" id="resolucionNotebook${producto.id}" value="${producto.resolucion}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="frecuenciaNotebook" class="form-label">Frecuencia de actualización</label>
+                <input type="number" class="form-control" id="frecuenciaNotebook${producto.id}" value="${producto.frecuencia}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="priceNotebook" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="priceNotebook${producto.id}" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codNotebook" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codNotebook${producto.id}" value="${producto.cod}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1Notebook" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1Notebook${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2Notebook" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2Notebook${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3Notebook" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3Notebook${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockNotebook" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockNotebook${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarNotebook(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  } else if (producto.categoria == "Motherboard"){
+  modal.innerHTML = `
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id="editar${producto.id}Label">Añadir Motherboard</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombreMother" class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombreMother${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaMother" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaMother${producto.id}" value="${producto.marca}" required>
+            </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="lineaMother" class="form-label">Linea</label>
+                <input type="text" class="form-control" id="lineaMother${producto.id}" value="${producto.linea}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="modeloMother" class="form-label">Modelo</label>
+                <input type="text" class="form-control" id="modeloMother${producto.id}" value="${producto.modelo}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="socketMother" class="form-label">Socket compatible</label>
+                  <input type="text" class="form-control" id="socketMother${producto.id}" value="${producto.socket}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="expMother" class="form-label">Ranuras de expansión PCI</label>
+                <input type="text" class="form-control" id="expMother${producto.id}" value="${producto.expansion}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="chipsetMother" class="form-label">Chipset Principal</label>
+                <input type="text" class="form-control" id="chipsetMother${producto.id}" value="${producto.chipset}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="ramMother" class="form-label">Tipo de RAM soportada</label>
+                  <input type="text" class="form-control" id="ramMother${producto.id}" value="${producto.tipoRam}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="capacidadMother" class="form-label">Capacidad max. de RAM</label>
+                <input type="number" class="form-control" id="capacidadMother${producto.id}" value="${producto.capacidadRam}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="slotsMother" class="form-label">Cantidad de slots RAM</label>
+                <input type="number" class="form-control" id="slotsMother${producto.id}" value="${producto.slotsRam}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="hdmiMother" class="form-label">Salidas Hdmi</label>
+                <input type="number" class="form-control" id="hdmiMother${producto.id}" value="${producto.hdmi}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="vgaMother" class="form-label">Salidas VGA</label>
+                <input type="number" class="form-control" id="vgaMother${producto.id}" value="${producto.vga}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="dviMother" class="form-label">Salidas DVI</label>
+                <input type="number" class="form-control" id="dviMother${producto.id}" value="${producto.dvi}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="ps2Mother" class="form-label">Puertos PS/2</label>
+                <input type="number" class="form-control" id="ps2Mother${producto.id}" value="${producto.ps2}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="usb2Mother" class="form-label">Puertos USB 2.0</label>
+                <input type="number" class="form-control" id="usb2Mother${producto.id}" value="${producto.usb2}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="usb3Mother" class="form-label">Puertos USB 3.0</label>
+                <input type="number" class="form-control" id="usb3Mother${producto.id}" value="${producto.usb3}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="cMother" class="form-label">Puertos Type C</label>
+                <input type="number" class="form-control" id="cMother${producto.id}" value="${producto.tipoC}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="sataMother" class="form-label">Puertos SATA</label>
+                <input type="number" class="form-control" id="sataMother${producto.id}" value="${producto.sata}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="priceMother" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="priceMother${producto.id}" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codMother" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codMother${producto.id}" value="${producto.cod}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1Mother" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1Mother${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2Mother" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2Mother${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3Mother" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3Mother${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockMother" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockMother${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarMother(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  } else if (producto.categoria == "Almacenamiento"){
+  modal.innerHTML = `
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id="editar${producto.id}Label">Editar Unidad de Almacenamiento</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombreAlmacenamiento" class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombreAlmacenamiento${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaAlmacenamiento" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaAlmacenamiento${producto.id}" value="${producto.marca}" required>
+            </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="tipoAlmacenamiento" class="form-label">Tipo</label>
+                <input type="text" class="form-control" id="tipoAlmacenamiento${producto.id}" value="${producto.tipo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="modeloAlmacenamiento" class="form-label">Modelo</label>
+                <input type="text" class="form-control" id="modeloAlmacenamiento${producto.id}" value="${producto.modelo}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="capacidadAlmacenamiento" class="form-label">Capacidad</label>
+                  <input type="text" class="form-control" id="capacidadAlmacenamiento${producto.id}" value="${producto.capacidad}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="velLecAlmacenamiento" class="form-label">Velocidad de lectura</label>
+                <input type="number" class="form-control" id="velLecAlmacenamiento${producto.id}" value="${producto.velLec}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="velEscAlmacenamiento" class="form-label">Velocidad de escritura</label>
+                <input type="number" class="form-control" id="velEscAlmacenamiento${producto.id}" value="${producto.velEsc}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="conexionAlmacenamiento" class="form-label">Tipo de conexión</label>
+                  <input type="text" class="form-control" id="conexionAlmacenamiento${producto.id}" value="${producto.conexion}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="consumoAlmacenamiento" class="form-label">Consumo</label>
+                <input type="number" class="form-control" id="consumoAlmacenamiento${producto.id}" value="${producto.consumo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="cacheAlmacenamiento" class="form-label">Memoria Cache</label>
+                <input type="number" class="form-control" id="cacheAlmacenamiento${producto.id}" value="${producto.cache}" required>
+              </div>
+            </div>                                                                      
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="priceAlmacenamiento" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="priceAlmacenamiento${producto.id}" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codAlmacenamiento" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codAlmacenamiento${producto.id}" value="${producto.cod}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1Almacenamiento" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1Almacenamiento${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2Almacenamiento" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2Almacenamiento${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3Almacenamiento" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3Almacenamiento${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockAlmacenamiento" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockAlmacenamiento${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarAlmacenamiento(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  } else if (producto.categoria == "Pantalla"){
+  modal.innerHTML = `
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id="editar${producto.id}Label">Editar Pantalla</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombrePantalla" class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombrePantalla${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaPantalla" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaPantalla${producto.id}" value="${producto.marca}" required>
+            </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="tamañoPantalla" class="form-label">Tamaño</label>
+                <input type="number" class="form-control" id="tamañoPantalla${producto.id}" value="${producto.tamaño}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="modeloPantalla" class="form-label">Modelo</label>
+                <input type="text" class="form-control" id="modeloPantalla${producto.id}" value="${producto.modelo}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="resolucionPantalla" class="form-label">Resolución</label>
+                  <input type="text" class="form-control" id="resolucionPantalla${producto.id}" value="${producto.resolucion}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="panelPantalla" class="form-label">Panel</label>
+                <input type="text" class="form-control" id="panelPantalla${producto.id}" value="${producto.panel}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="frecuenciaPantalla" class="form-label">Frecuencia</label>
+                <input type="number" class="form-control" id="frecuenciaPantalla${producto.id}" value="${producto.frecuencia}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="contrastePantalla" class="form-label">Contraste</label>
+                  <input type="text" class="form-control" id="contrastePantalla${producto.id}" value="${producto.contraste}" required>
+              </div>
+            </div>                                       
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="brilloPantalla" class="form-label">Brillo</label>
+                <input type="number" class="form-control" id="brilloPantalla${producto.id}" value="${producto.brillo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="tiempoPantalla" class="form-label">Tiempo de respuesta</label>
+                <input type="number" class="form-control" id="tiempoPantalla${producto.id}" value="${producto.tiempo}" required>
+              </div>
+            </div>                                                                      
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="anchoPantalla" class="form-label">Ancho</label>
+                <input type="number" class="form-control" id="anchoPantalla${producto.id}" value="${producto.ancho}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="altoPantalla" class="form-label">Alto</label>
+                <input type="number" class="form-control" id="altoPantalla${producto.id}" value="${producto.alto}" required>
+              </div>
+            </div>                                                                      
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="pricePantalla" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="pricePantalla${producto.id}" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codPantalla" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codPantalla${producto.id}" value="${producto.cod}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1Pantalla" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1Pantalla${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2Pantalla" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2Pantalla${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3Pantalla" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3Pantalla${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockPantalla" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockPantalla${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarPantalla(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  } else{
+  modal.innerHTML = ` 
+  <div class="modal fade text-start" id="editar${producto.id}" tabindex="-1" aria-labelledby="editar${producto.id}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bgColor">
+          <h1 class="modal-title fs-5 colorFuente" id="editar${producto.id}Label">Editar</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body bgColor colorFuente">
+          <form>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="nombreOtro" class="form-label">Nombre del producto</label>
+                <input type="text" class="form-control" id="nombreOtro${producto.id}" value="${producto.titulo}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="marcaOtro" class="form-label">Marca</label>
+                <input type="text" class="form-control" id="marcaOtro${producto.id}" value="${producto.marca}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-md-12">
+                <label for="categoriaOtro" class="form-label">Categoría</label>
+                <input type="text" class="form-control" id="categoriaOtro${producto.id}" value="${producto.categoria}" required>
+            </div>
+            </div>                                                   
+            <div class="row">
+              <div class="mb-3 col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-md-12">
+                <label for="nombreOtro" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="descripcionOtro${producto.id}" value="${producto.descripcion}" required></textarea>
+              </div>
+            </div>                                                   
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="priceOtro" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="priceOtro${producto.id}" value="${producto.precio}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="codOtro" class="form-label">Código de Producto</label>
+                <input type="text" class="form-control" id="codOtro${producto.id}" value="${producto.cod}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image1Otro" class="form-label">Portada</label>
+                <input type="text" class="form-control" id="image1Otro${producto.id}" value="${producto.portada}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image2Otro" class="form-label">Imagen 2</label>
+                <input type="text" class="form-control" id="image2Otro${producto.id}" value="${producto.img2}" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                <label for="image3Otro" class="form-label">Imagen 3</label>
+                <input type="text" class="form-control" id="image3Otro${producto.id}" value="${producto.img3}" required>
+              </div>
+              <div class="mb-3 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+                  <label for="stockOtro" class="form-label">Unidades en existencia</label>
+                  <input type="number" class="form-control" id="stockOtro${producto.id}" value="${producto.stock}" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn bgColor btn-outline-secondary colorFuente" onclick="editarOtro(${producto.id})">Editar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+  }
 }
