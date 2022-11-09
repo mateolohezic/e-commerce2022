@@ -165,3 +165,7 @@
 .dropdown-item:hover{
     cursor: pointer; 
 }
+
+.bgColor{
+    background-color: #333C4A;
+}

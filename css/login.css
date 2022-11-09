@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+body{
+    background-color: #F6F7D3;
+}
+
+.offcanvas{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.fuente{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuente{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuente2{
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.colorFuente2:hover{
+    color: #F6F7D3;
+    font-size: 1.2rem;
+}
+
+.colorFuenteNav{
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.colorFuenteNav:hover{
+    color: #F6F7D3;
+}
+
+.navbar{
+    background-color: #333C4A;
+}
+
+.footer{
+    background-color: #333C4A;
+    margin-top: 7rem;
+}
+
+@media (max-width:991px) {
+    .flexNavBar{
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        border-top: 1px solid #495664;
+    }
+}
+
+@media (min-width:992px) {
+    .flexNavBar{
+        width: 50%;
+    }
+}
+
+.formularioLogin{
+    background-color: #333C4A;
+    width: 40%;
+    margin-top: 5rem;
+    border-radius: 1rem;
+}
+
+.bgColor{
+    background-color: #495664;
+}
+
+.registro{
+    color: #F8FCEB;
+    text-decoration: none;
+}
+
+.registro:hover{
+    color: #7a81b6;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Index</title>
+</head>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg m-0">
+            <div class="container-fluid">
+                <a class="navbar-brand colorFuenteNav" href="./index.html">GamerStore</a>
+            </div>
+        </nav>
+        <section class="mt-5 mb-5">
+            <div class="formularioLogin mx-auto p-5 colorFuente">
+                <form>
+                    <div class="text-center mb-4 fs-1">Iniciar Sesión</div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-md-12">
+                        <label for="nombreOtro" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="nombreOtro" value="" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="mb-3 col-xxl-12 col-xl-12 col-lg-12 col-sm-12 col-md-12">
+                        <label for="marcaOtro" class="form-label">Contraseña</label>
+                        <input type="text" class="form-control" id="marcaOtro" value="" required>
+                     </div>
+                    </div>
+                    <div class="text-end mt-2 mb-4">
+                        ¿No tienes una cuenta?
+                          <a class="registro" href="./register.html">Regístrate</a>
+                        <div>
+                          ¿Olvidaste tu contraseña? <a class="registro" href="#recuperarModal"  data-bs-target="#recuperarModal" data-bs-toggle="modal">Restablecer</a>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row-reverse mt-3">
+                        <button type="button" class="btn bgColor btn-outline-secondary colorFuente" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Iniciar Sesión</button>
+                    </div>
+                  </form>
+            </div>
+        </section>
+        <footer>
+            <div class="container-fluid p-4 fuente footer w-100">
+                <div class="row">
+                    <div class="text-lg-start text-center col-lg-4 m-lg-0 m-1">
+                        <a href="404" class="text-decoration-none colorFuente2">Preguntas Frecuentas</a>
+                    </div>
+                    <div class="text-center col-lg-4 col-12 m-lg-0 m-1 colorFuente">&copy 2022 <b>Mateo Lohezic</b> - Todos los derechos reservados.</div>
+                    <div class="text-lg-end text-center col-lg-4 fs-5 m-lg-0 m-1 ">
+                    <a href="https://www.facebook.com/" class="text-decoration-none colorFuente2"><i class="bi bi-facebook m-1 RS"></i></a>
+                    <a href="https://www.instagram.com/" class="text-decoration-none colorFuente2"><i class="bi bi-instagram m-1 RS"></i></a>
+                    <a href="https://web.whatsapp.com/" class="text-decoration-none colorFuente2"><i class="bi bi-whatsapp m-1 RS"></i></a>
+                    </div>
+                </div>
+                </div>
+        </footer>
+    </main>
+    <script src="./js/loginApp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
