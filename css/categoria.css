@@ -97,6 +97,10 @@
         width: auto;
     }
     
+    .tituloCategoria{
+        width: 40%;
+    }
+    
 }
 
 @media (max-width: 737px) {
@@ -111,6 +115,10 @@
     .imagenCard{
         max-height: 50vw;
         width: auto;
+    }
+
+    .tituloCategoria{
+        width: 70%;
     }
 }
 
@@ -127,4 +135,10 @@
 
 .dropdown-item:hover{
     cursor: pointer; 
+}
+
+.tituloCategoria{
+    border-bottom: 1px solid #d4d4d4;
+    margin: auto;
+    padding-bottom: 1rem;
 }
