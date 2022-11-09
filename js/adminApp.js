@@ -1502,3 +1502,461 @@ const imprimirEditar = async (id) =>{
   `
   }
 }
+
+const editarProcesador = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombreProcesador`).value
+  const marca = document.getElementById (`marcaProcesador`).value
+  const socket = document.getElementById (`socketProcesador`).value
+  const familia = document.getElementById (`familiaProcesador`).value
+  const modelo = document.getElementById (`modeloProcesador`).value
+  const nucleos = document.getElementById (`nucleosProcesador`).value
+  const ram = document.getElementById (`ramProcesador`).value
+  const fecha = document.getElementById (`fechaProcesador`).value
+  const gpu = document.getElementById (`gpuProcesador`).value
+  const frecMax = document.getElementById (`frecuenciaMaxProcesador`).value
+  const precio = document.getElementById (`priceProcesador`).value
+  const cod = document.getElementById (`codProcesador`).value
+  const portada = document.getElementById (`image1Procesador`).value
+  const img2 = document.getElementById (`image2Procesador`).value
+  const img3 = document.getElementById (`image3Procesador`).value
+  const stock = document.getElementById (`stockProcesador`).value
+  const categoria = "Procesador"
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+    method:"PATCH",
+    body: JSON.stringify({
+      titulo,
+      marca,
+      socket,
+      familia,
+      modelo,
+      nucleos,
+      ram,
+      fecha,
+      gpu,
+      frecMax,
+      precio,
+      cod,
+      portada,
+      img2,
+      img3,
+      stock,
+      categoria,
+      oferta,
+      favorito,
+      publicado
+    }),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+
+}
+
+const editarGPU = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombreGPU${id}`).value
+  const marca = document.getElementById (`marcaGPU${id}`).value
+  const fabricante = document.getElementById (`fabricanteGPU${id}`).value
+  const familia = document.getElementById (`familiaGPU${id}`).value
+  const modelo = document.getElementById (`modeloGPU${id}`).value
+  const tamaño = document.getElementById (`tamañoGPU${id}`).value
+  const tipo = document.getElementById (`tipoGPU${id}`).value
+  const fecha = document.getElementById (`fechaGPU${id}`).value
+  const conectividad = document.getElementById (`conectividadGPU${id}`).value
+  const resMax = document.getElementById (`resMaxGPU${id}`).value
+  const pci = document.getElementById (`pciGPU${id}`).value
+  const nucleos = document.getElementById (`nucleosGPU${id}`).value
+  const precio = document.getElementById (`priceGPU${id}`).value
+  const cod = document.getElementById (`codGPU${id}`).value
+  const portada = document.getElementById (`image1GPU${id}`).value
+  const img2 = document.getElementById (`image2GPU${id}`).value
+  const img3 = document.getElementById (`image3GPU${id}`).value
+  const stock = document.getElementById (`stockGPU${id}`).value
+  const categoria = "GPU"
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+      method:"PATCH",
+      body: JSON.stringify({
+          titulo,
+          marca,
+          fabricante,
+          familia,
+          modelo,
+          tamaño,
+          tipo,
+          fecha,
+          conectividad,
+          resMax,
+          pci,
+          nucleos,
+          precio,
+          cod,
+          portada,
+          img2,
+          img3,
+          stock,
+          categoria,
+          oferta,
+          favorito,
+          publicado
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+
+}
+
+const editarPC = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombrePC${id}`).value
+  const marca = document.getElementById (`marcaPC${id}`).value
+  const fabricante = document.getElementById (`fabricantePC${id}`).value
+  const os = document.getElementById (`osPC${id}`).value
+  const procesador = document.getElementById (`procesadorPC${id}`).value
+  const cantidadRam = document.getElementById (`cantidadPC${id}`).value
+  const tipoRam = document.getElementById (`tipoPC${id}`).value
+  const almacenamiento = document.getElementById (`almacenamientoPC${id}`).value
+  const gpu = document.getElementById (`gpuPC${id}`).value
+  const mother = document.getElementById (`motherPC${id}`).value
+  const gabinete = document.getElementById (`gabinetePC${id}`).value
+  const fuente = document.getElementById (`fuentePC${id}`).value
+  const precio = document.getElementById (`pricePC${id}`).value
+  const cod = document.getElementById (`codPC${id}`).value
+  const portada = document.getElementById (`image1PC${id}`).value
+  const img2 = document.getElementById (`image2PC${id}`).value
+  const img3 = document.getElementById (`image3PC${id}`).value
+  const stock = document.getElementById (`stockPC${id}`).value
+  const categoria = "PC"
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+      method:"PATCH",
+      body: JSON.stringify({
+          titulo,
+          marca,
+          fabricante,
+          os,
+          procesador,
+          cantidadRam,
+          tipoRam,
+          almacenamiento,
+          gpu,
+          mother,
+          gabinete,
+          fuente,
+          precio,
+          cod,
+          portada,
+          img2,
+          img3,
+          stock,
+          categoria,
+          oferta,
+          favorito,
+          publicado
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+
+}
+
+const editarNotebook = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombreNotebook${id}`).value
+  const marca = document.getElementById (`marcaNotebook${id}`).value
+  const linea = document.getElementById (`lineaNotebook${id}`).value
+  const modelo = document.getElementById (`modeloNotebook${id}`).value
+  const procesador = document.getElementById (`procesadorNotebook${id}`).value
+  const cantidadRam = document.getElementById (`cantidadNotebook${id}`).value
+  const tipoRam = document.getElementById (`tipoNotebook${id}`).value
+  const almacenamiento = document.getElementById (`almacenamientoNotebook${id}`).value
+  const gpu = document.getElementById (`gpuNotebook${id}`).value
+  const pantalla = document.getElementById (`pantallaNotebook${id}`).value
+  const resolucion = document.getElementById (`resolucionNotebook${id}`).value
+  const frecuencia = document.getElementById (`frecuenciaNotebook${id}`).value
+  const precio = document.getElementById (`priceNotebook${id}`).value
+  const cod = document.getElementById (`codNotebook${id}`).value
+  const portada = document.getElementById (`image1Notebook${id}`).value
+  const img2 = document.getElementById (`image2Notebook${id}`).value
+  const img3 = document.getElementById (`image3Notebook${id}`).value
+  const stock = document.getElementById (`stockNotebook${id}`).value
+  const categoria = "Notebook"
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+      method:"PATCH",
+      body: JSON.stringify({
+          titulo,
+          marca,
+          linea,
+          modelo,
+          procesador,
+          cantidadRam,
+          tipoRam,
+          almacenamiento,
+          gpu,
+          pantalla,
+          resolucion,
+          frecuencia,
+          precio,
+          cod,
+          portada,
+          img2,
+          img3,
+          stock,
+          categoria,
+          oferta,
+          favorito,
+          publicado
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+
+}
+
+const editarMother = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombreMother${id}`).value
+  const marca = document.getElementById (`marcaMother${id}`).value
+  const linea = document.getElementById (`lineaMother${id}`).value
+  const modelo = document.getElementById (`modeloMother${id}`).value
+  const socket = document.getElementById (`socketMother${id}`).value
+  const expansion = document.getElementById (`expMother${id}`).value
+  const chipset = document.getElementById (`chipsetMother${id}`).value
+  const tipoRam = document.getElementById (`ramMother${id}`).value
+  const capacidadRam = document.getElementById (`capacidadMother${id}`).value
+  const slotsRam = document.getElementById (`slotsMother${id}`).value
+  const hdmi = document.getElementById (`hdmiMother${id}`).value
+  const vga = document.getElementById (`vgaMother${id}`).value
+  const dvi = document.getElementById (`dviMother${id}`).value
+  const ps2 = document.getElementById (`ps2Mother${id}`).value
+  const usb2 = document.getElementById (`usb2Mother${id}`).value
+  const usb3 = document.getElementById (`usb3Mother${id}`).value
+  const tipoC = document.getElementById (`cMother${id}`).value
+  const sata = document.getElementById (`sataMother${id}`).value
+  const precio = document.getElementById (`priceMother${id}`).value
+  const cod = document.getElementById (`codMother${id}`).value
+  const portada = document.getElementById (`image1Mother${id}`).value
+  const img2 = document.getElementById (`image2Mother${id}`).value
+  const img3 = document.getElementById (`image3Mother${id}`).value
+  const stock = document.getElementById (`stockMother${id}`).value
+  const categoria = "Motherboard"
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+      method:"PATCH",
+      body: JSON.stringify({
+          titulo,
+          marca,
+          linea,
+          modelo,
+          socket,
+          expansion,
+          chipset,
+          tipoRam,
+          capacidadRam,
+          slotsRam,
+          hdmi,
+          vga,
+          dvi,
+          ps2,
+          usb2,
+          usb3,
+          tipoC,
+          sata,
+          precio,
+          cod,
+          portada,
+          img2,
+          img3,
+          stock,
+          categoria,
+          oferta,
+          favorito,
+          publicado
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+
+}
+
+const editarAlmacenamiento = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombreAlmacenamiento${id}`).value
+  const marca = document.getElementById (`marcaAlmacenamiento${id}`).value
+  const tipo = document.getElementById (`tipoAlmacenamiento${id}`).value
+  const modelo = document.getElementById (`modeloAlmacenamiento${id}`).value
+  const capacidad = document.getElementById (`capacidadAlmacenamiento${id}`).value
+  const velLec = document.getElementById (`velLecAlmacenamiento${id}`).value
+  const velEsc = document.getElementById (`velEscAlmacenamiento${id}`).value
+  const conexion = document.getElementById (`conexionAlmacenamiento${id}`).value
+  const consumo = document.getElementById (`consumoAlmacenamiento${id}`).value
+  const cache = document.getElementById (`cacheAlmacenamiento${id}`).value
+  const precio = document.getElementById (`priceAlmacenamiento${id}`).value
+  const cod = document.getElementById (`codAlmacenamiento${id}`).value
+  const portada = document.getElementById (`image1Almacenamiento${id}`).value
+  const img2 = document.getElementById (`image2Almacenamiento${id}`).value
+  const img3 = document.getElementById (`image3Almacenamiento${id}`).value
+  const stock = document.getElementById (`stockAlmacenamiento${id}`).value
+  const categoria = "Almacenamiento"
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+      method:"PATCH",
+      body: JSON.stringify({
+          titulo,
+          marca,
+          tipo,
+          modelo,
+          capacidad,
+          velLec,
+          velEsc,
+          conexion,
+          consumo,
+          cache,
+          precio,
+          cod,
+          portada,
+          img2,
+          img3,
+          stock,
+          categoria,
+          oferta,
+          favorito,
+          publicado
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+
+}
+
+const editarPantalla = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombrePantalla${id}`).value
+  const marca = document.getElementById (`marcaPantalla${id}`).value
+  const tamaño = document.getElementById (`tamañoPantalla${id}`).value
+  const modelo = document.getElementById (`modeloPantalla${id}`).value
+  const resolucion = document.getElementById (`resolucionPantalla${id}`).value
+  const panel = document.getElementById (`panelPantalla${id}`).value
+  const frecuencia = document.getElementById (`frecuenciaPantalla${id}`).value
+  const contraste = document.getElementById (`contrastePantalla${id}`).value
+  const brillo = document.getElementById (`brilloPantalla${id}`).value
+  const tiempo = document.getElementById (`tiempoPantalla${id}`).value
+  const ancho = document.getElementById (`anchoPantalla${id}`).value
+  const alto = document.getElementById (`altoPantalla${id}`).value
+  const precio = document.getElementById (`pricePantalla${id}`).value
+  const cod = document.getElementById (`codPantalla${id}`).value
+  const portada = document.getElementById (`image1Pantalla${id}`).value
+  const img2 = document.getElementById (`image2Pantalla${id}`).value
+  const img3 = document.getElementById (`image3Pantalla${id}`).value
+  const stock = document.getElementById (`stockPantalla${id}`).value
+  const categoria = "Pantalla"
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+      method:"PATCH",
+      body: JSON.stringify({
+          titulo,
+          marca,
+          tamaño,
+          modelo,
+          resolucion,
+          panel,
+          frecuencia,
+          contraste,
+          brillo,
+          tiempo,
+          ancho,
+          alto,
+          precio,
+          cod,
+          portada,
+          img2,
+          img3,
+          stock,
+          categoria,
+          oferta,
+          favorito,
+          publicado
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+
+}
+
+const editarOtro = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/productos/${id}`);
+  const producto = await resultado.json();
+  const titulo = document.getElementById (`nombreOtro${id}`).value
+  const marca = document.getElementById (`marcaOtro${id}`).value
+  const descripcion = document.getElementById (`descripcionOtro${id}`).value
+  const categoria = document.getElementById (`categoriaOtro${id}`).value
+  const precio = document.getElementById (`priceOtro${id}`).value
+  const cod = document.getElementById (`codOtro${id}`).value
+  const portada = document.getElementById (`image1Otro${id}`).value
+  const img2 = document.getElementById (`image2Otro${id}`).value
+  const img3 = document.getElementById (`image3Otro${id}`).value
+  const stock = document.getElementById (`stockOtro${id}`).value
+  const oferta = producto.resultado
+  const favorito = producto.favorito
+  const publicado = producto.publicado
+
+  fetch(`http://localhost:3000/productos/${id}`, {  
+      method:"PATCH",
+      body: JSON.stringify({
+          titulo,
+          marca,
+          descripcion,
+          precio,
+          cod,
+          portada,
+          img2,
+          img3,
+          stock,
+          categoria,
+          oferta,
+          favorito,
+          publicado
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+
+}
